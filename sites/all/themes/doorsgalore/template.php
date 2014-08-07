@@ -52,9 +52,15 @@ function doorsgalore_preprocess_html(&$variables, $hook) {
  * @param $hook
  *   The name of the template being rendered ("page" in this case.)
  */
-/* -- Delete this line if you want to use this function
+
 function doorsgalore_preprocess_page(&$variables, $hook) {
-  $variables['sample_variable'] = t('Lorem ipsum.');
+  
+  if (arg(0) == 'taxonomy' && arg(1) == 'term' && is_numeric(arg(2))){
+     unset($variables['page']['content']['system_main']['nodes']);
+     unset($variables['page']['content']['system_main']['pager']);
+     unset($variables['page']['content']['system_main']['no_content']);
+   }
+  
 }
 // */
 
@@ -132,7 +138,7 @@ function doorsgalore_preprocess_block(&$variables, $hook) {
 // */
 
 
-function doorsgalore_block_render ($module, $block_id){
+function doorsgalore_block_render($module, $block_id){
 
     $block = block_load($module, $block_id);
     

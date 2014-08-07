@@ -14,8 +14,8 @@ $openextrabolditalic: 'open_sansextrabold_italic';
 $openlightitalic: 'open_sanslight_italic';
 $droidbold: 'droid_sansbold';
 $droid: 'droid_sansregular';
-$create: 'crete_roundregular';
-$createitalic: 'crete_rounditalic';
+$crete: 'crete_roundregular';
+$creteitalic: 'crete_rounditalic';
 
 
 $base-font-size:  0.8125em; // The font size set on the root html element. based on a default font-size of 16px which makes 13px default
@@ -49,11 +49,10 @@ $s11: 85%;          /* 11px */
 /*
  * Colors
  */
-$grey: #544c45;
-$grey_1: #eeeeee;
-$grey_2: #717171;
-$grey_3: #3e3e3e;
-$grey_4: #c8c8c8;
+$brown: #544c45;
+$cream: #dddbcc;
+$green: #39b54a;
+$light: #f2f2f2;
 
 
 
@@ -84,6 +83,12 @@ $indent-amount: 30px;
     margin: 0 auto;
     padding: zen-half-gutter();
     max-width: $contentWidth;
+}
+
+@mixin reset(){
+    margin: 0;
+    padding: 0;
+    list-style:none;
 }
 
 

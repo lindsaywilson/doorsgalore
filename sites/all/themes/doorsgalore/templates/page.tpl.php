@@ -19,12 +19,12 @@
     <?php print render($page['header']); ?>
     
     <div id="nav">
-		<?php doorsgalore_block_render ('menu_block', 1) ?>
+		<?php print doorsgalore_block_render('menu_block', 1); ?>
     </div>
 
   </header>
 
-  <div id="main">
+  <div id="main" class="clearfix">
 
     <div id="content" class="column" role="main">
       <?php print render($page['highlighted']); ?>
@@ -39,20 +39,30 @@
         <ul class="action-links"><?php print render($action_links); ?></ul>
       <?php endif; ?>
       <?php print render($page['content']); ?>
-      <?php print $feed_icons; ?>
+      <?php //print $feed_icons; ?>
     </div>
-    <?php
-      // Render the sidebars to see if there's anything in them.
-      $sidebar_first  = render($page['sidebar_first']);
-      $sidebar_second = render($page['sidebar_second']);
-    ?>
-
-    <?php if ($sidebar_first || $sidebar_second): ?>
-      <aside class="sidebars">
-        <?php print $sidebar_first; ?>
-        <?php print $sidebar_second; ?>
-      </aside>
+	
+	<?php if(!$is_front): ?>
+	<aside class="sidebars">
+      
+		<div id="sidebar-left" class="sidebar">
+        
+        <!--
+        if(arg(0) == 'faqs' || request_uri() == '/node/add/faq'){
+            print t('Frequently Asked Questions');
+        }
+        -->
+        
+        	<?php include_once 'include/include--find-a-door.php'; ?>
+		</div>
+        
+		<div id="sidebar-right" class="sidebar">
+			<?php include_once 'include/include--testimonial.php'; ?>
+		</div>
+        
+	</aside>
     <?php endif; ?>
+
 
   </div>
 

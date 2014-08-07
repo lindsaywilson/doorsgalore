@@ -41,7 +41,7 @@
 /*
  * Nesting
  */
-/* line 144, ../sass/_constant.scss */
+/* line 149, ../sass/_constant.scss */
 .clearfix:after {
   content: "";
   display: table;
@@ -318,6 +318,54 @@ body.admin-menu {
 /* ------------------------------ */
 /* MAIN LAYOUT 
 /* ------------------------------ */
+/* line 8, ../sass/_layout.scss */
+.not-front #content {
+  float: left;
+  width: 58%;
+  margin-left: 21%;
+  margin-right: -79%;
+}
+/* line 9, ../sass/_layout.scss */
+.not-front #sidebar-left {
+  float: left;
+  width: 21%;
+  margin-left: 0%;
+  margin-right: -21%;
+}
+/* line 12, ../sass/_layout.scss */
+.not-front #sidebar-right {
+  float: left;
+  width: 21%;
+  margin-left: 79%;
+  margin-right: -100%;
+}
+
+/* ------------------------------ */
+/* MAIN LAYOUT 
+/* ------------------------------ */
+/* line 22, ../sass/_layout.scss */
+.grid {
+  float: left;
+}
+
+/* line 23, ../sass/_layout.scss */
+.grid-half {
+  width: 50%;
+}
+
+/* line 24, ../sass/_layout.scss */
+.grid-third {
+  width: 33.333%;
+}
+
+/* line 25, ../sass/_layout.scss */
+.grid-quarter {
+  width: 25%;
+}
+
+/* ------------------------------ */
+/* MAIN 
+/* ------------------------------ */
 /* line 7, ../sass/_application.scss */
 #page {
   margin: 0 auto;
@@ -325,57 +373,135 @@ body.admin-menu {
   padding: 0 10px;
 }
 
+/* line 9, ../sass/_application.scss */
+#main {
+  padding-top: 15px;
+}
+
 /* line 10, ../sass/_application.scss */
 #content {
   position: relative;
 }
 
+/* line 13, ../sass/_application.scss */
+.sidebar h2 {
+  color: #39b54a;
+}
+
+/* ------------------------------ */
+/* NAV
+/* ------------------------------ */
+/* line 21, ../sass/_application.scss */
+#nav {
+  background: #544c45;
+}
+/* line 22, ../sass/_application.scss */
+#nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-align: center;
+}
+/* line 23, ../sass/_application.scss */
+#nav ul li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: inline-block;
+  padding: 8px 0;
+}
+/* line 24, ../sass/_application.scss */
+#nav ul li:last-child a {
+  border-right: none;
+}
+/* line 25, ../sass/_application.scss */
+#nav ul li a {
+  display: block;
+  font-family: "crete_roundregular";
+  font-size: 107.6923%;
+  color: #dddbcc;
+  line-height: 1;
+  font-weight: normal;
+  font-style: normal;
+  text-decoration: none;
+  padding: 0 10px;
+  border-right: 1px solid #35302a;
+}
+/* line 26, ../sass/_application.scss */
+#nav ul li a:hover {
+  color: #fff;
+}
+
 /* ------------------------------ */
 /* HTML ELEMENTS
 /* ------------------------------ */
-/* line 22, ../sass/_application.scss */
+/* line 36, ../sass/_application.scss */
+h1, h2, h3, h4, h5 {
+  font-family: "crete_roundregular";
+  font-size: 100%;
+  color: #544c45;
+  line-height: 1.2;
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* line 37, ../sass/_application.scss */
+h1 {
+  font-size: 200%;
+}
+
+/* line 38, ../sass/_application.scss */
+h2 {
+  font-size: 138.46153%;
+  margin-bottom: 15px;
+}
+
+/* line 39, ../sass/_application.scss */
+h3 {
+  font-size: 107.6923%;
+}
+
+/* line 43, ../sass/_application.scss */
 p, ul, ol {
-  line-height: 1.5em;
-  font-size: 1.4em;
   margin: 0 0 20px;
   padding: 0;
 }
 
-/* line 23, ../sass/_application.scss */
+/* line 44, ../sass/_application.scss */
 ul, ol {
   margin-left: 1em;
   padding: 0;
 }
 
-/* line 24, ../sass/_application.scss */
+/* line 45, ../sass/_application.scss */
 p:last-child, ul:last-child, ol:last-child {
   margin-bottom: 0;
 }
 
-/* line 25, ../sass/_application.scss */
+/* line 46, ../sass/_application.scss */
 ul {
   list-style: disc;
 }
 
-/* line 26, ../sass/_application.scss */
+/* line 47, ../sass/_application.scss */
 ul li, ol li {
   padding-left: 5px;
   padding-bottom: 5px;
 }
 
-/* line 29, ../sass/_application.scss */
+/* line 50, ../sass/_application.scss */
 ul p, ol p,
 ul ul,
 ol ol {
   font-size: 1em;
 }
 
-/* line 30, ../sass/_application.scss */
+/* line 51, ../sass/_application.scss */
 ul ul {
   list-style: none;
 }
 
-/* line 32, ../sass/_application.scss */
+/* line 53, ../sass/_application.scss */
 a {
   color: #544c45;
   outline: none;
@@ -386,27 +512,27 @@ a {
   transition: all 0.2s linear;
 }
 
-/* line 33, ../sass/_application.scss */
+/* line 54, ../sass/_application.scss */
 a:active {
   outline: none;
 }
 
-/* line 34, ../sass/_application.scss */
+/* line 55, ../sass/_application.scss */
 a:link {
   outline: none;
 }
 
-/* line 35, ../sass/_application.scss */
+/* line 56, ../sass/_application.scss */
 a:hover {
   text-decoration: none;
 }
 
-/* line 36, ../sass/_application.scss */
+/* line 57, ../sass/_application.scss */
 img {
   vertical-align: middle;
 }
 
-/* line 38, ../sass/_application.scss */
+/* line 59, ../sass/_application.scss */
 .transition {
   -webkit-transition: all .2s ease-in-out;
   -moz-transition: all .2s ease-in-out;
@@ -423,19 +549,46 @@ img {
 /* ------------------------------ */
 /* CONTENT TYPES
 /* ------------------------------ */
-/*
+/* TESTIMONIAL
 ----------------------------------*/
+/* line 76, ../sass/_application.scss */
+#testimonial {
+  background: #f2f2f2;
+  padding: 15px;
+}
+/* line 77, ../sass/_application.scss */
+#testimonial p {
+  font-family: "open_sanssemibold_italic";
+  line-height: 1.3;
+  margin-bottom: 0;
+}
+/* line 78, ../sass/_application.scss */
+#testimonial footer {
+  font-family: "droid_sansbold";
+}
+/* line 79, ../sass/_application.scss */
+#testimonial .quote {
+  font-family: "crete_roundregular";
+  font-size: 2em;
+  color: #39b54a;
+  line-height: 0.6;
+  font-weight: normal;
+  font-style: normal;
+  position: relative;
+  top: 0.2 0.4em;
+}
+
 /* ------------------------------ */
 /* VIEWS
 /* ------------------------------ */
 /* GLOBAL VIEW STYLES
 ----------------------------------*/
-/* line 63, ../sass/_application.scss */
+/* line 89, ../sass/_application.scss */
 .views-row {
   position: relative;
 }
 
-/* line 64, ../sass/_application.scss */
+/* line 90, ../sass/_application.scss */
 .views-field-edit-node a {
   position: absolute;
   right: 1px;
@@ -453,7 +606,7 @@ img {
   height: auto;
 }
 
-/* line 65, ../sass/_application.scss */
+/* line 91, ../sass/_application.scss */
 .views-field-edit-node a:hover {
   opacity: 0.6;
 }
@@ -463,12 +616,12 @@ img {
 /* ------------------------------ */
 /* DRUPAL OVERRIDES
 /* ------------------------------ */
-/* line 76, ../sass/_application.scss */
+/* line 102, ../sass/_application.scss */
 div.messages, div.messages--status, div.messages--warning, div.messages--error {
   font-size: 1em;
 }
 
-/* line 78, ../sass/_application.scss */
+/* line 104, ../sass/_application.scss */
 div.messages p, div.messages--status p, div.messages--warning p, div.messages--error p,
 div.messages ul,
 div.messages--status ul,
@@ -477,7 +630,7 @@ div.messages--error ul {
   font-size: 1em;
 }
 
-/* line 80, ../sass/_application.scss */
+/* line 106, ../sass/_application.scss */
 ul.tabs-primary {
   position: absolute;
   top: 0;
@@ -488,7 +641,7 @@ ul.tabs-primary {
   background: none;
 }
 
-/* line 81, ../sass/_application.scss */
+/* line 107, ../sass/_application.scss */
 ul.tabs-primary li {
   margin: 0;
   padding: 0 1px 0 0;
@@ -500,7 +653,7 @@ ul.tabs-primary li {
   float: left;
 }
 
-/* line 82, ../sass/_application.scss */
+/* line 108, ../sass/_application.scss */
 ul.tabs-primary li a {
   border: none;
   background: #000;
@@ -512,12 +665,12 @@ ul.tabs-primary li a {
   text-decoration: none;
 }
 
-/* line 83, ../sass/_application.scss */
+/* line 109, ../sass/_application.scss */
 ul.tabs-primary li a:hover {
   opacity: 0.6;
 }
 
-/* line 85, ../sass/_application.scss */
+/* line 111, ../sass/_application.scss */
 .messages, .messages--status, .messages--warning, .messages--error {
   margin: 20px 0;
   padding: 10px 10px 10px 50px;
@@ -527,48 +680,48 @@ ul.tabs-primary li a:hover {
   border: 1px solid #be7;
 }
 
-/* line 87, ../sass/_application.scss */
+/* line 113, ../sass/_application.scss */
 .messages--warning {
   background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAACuElEQVRIiWP4//8/Ay0xSYqntTpnT252zqeJBf0Njhsykrz/pyd6/e9vcNpGVQv6q2wlm0qc/r0+IPD/3UG+/61l9v9mdrjIUc2C7hqHUzc3S///eZwBjO9tF/vfWe1wjioWTKixVm8otPn38wQT3IKfxxn/t5Va/utpsNSg2ILWcttrNzdJgQ3+dpQRjEHs+9tE/zeXWt+gyILOamuTqlxrsOtPLub+7+emBsSq/88v5wL7oqHQ9H9nmbkF2RbUF1rev7lJEuziuU3i/90ddcB4UZsoJC62ifyvK7R4QJYFrcUGrmUZ5v9hYb9hosh/bzcDMN42VRgeF9W5hv8bi/XdSbagKtfs2c1NEvCIPbaQ/7+/pwkYn17Ki0hR24T/l2eZPCfJgsZ83dCiNOP/yCnn7iau/8G+5mD8aBsHSoqqyNL9X5erHUm0BcVpRm9ubhZHMoTh/4eDzP/DA23+RwTZ/P96hAlF7t5Wof8FyfpvibKgNk8noyDZ4D9quofg1Bjr/1kJlhjiIF+Upmn/r83RzCJoQXaC3qcbm8SwGMLwvybP/H8jMGlik7u7VeB/Zqz2J7wWVGdr1uTG62J1PQgfWST1/+hiCaxyIF8UJqv9r8hQrcVpQVqkzrcbG0WwGvB2H/P/lnx5MAaxsam5vYn3f2KY+jesFpSlqfZnxWjidP2OGWL/g/0swBjExu4Lhv958Ur/i5KU+lEsCA1lYI4JUv95bZ0gTo2Pt3P+z0myBmMQG5e6mxu4/kf4Kf8EmQm3oCRNebKrvSawIGPBqRG9sMOp5hjjfwdrlf/58bKT4RaUpWvtcLZV/39iscD/H0AFP46jYwYiMeP/44u4/9tbKQODSXUH3II9G7v18hI0n8YGKv+IDVT6joxj/BVx4mgcOCde/SnITPRUJAHEGlTCEkQV19TAAN8FC67hZdFXAAAAAElFTkSuQmCC');
   border-color: #ed5;
 }
 
-/* line 88, ../sass/_application.scss */
+/* line 114, ../sass/_application.scss */
 .messages--error {
   background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAACpElEQVR42rWWTUgbQRiGQ0Tx4MWDeFM8eBA9iKAoggiCoCiiIiL4L3oQV1CJB0UEf6iRYFpK7UniTw9VSqL2kvQsVDBpSZrtRo35czVNW3oprRf17exSl4yzu1ikAy9h59vvedhkMrMGAGoxknAk2w8MJ/WosXThiZkZt9jdLeglPjn5ATc3mhJNuNjbK0QbG3ExMICL/n6IfX0gcxB7ekDAELu6IHZ2IlJbi1hLS1BLogmPtbUhMTv7oMSamzUlqnByMxLT0/8STQkDj9TV4ZLj5OysrODl8jIu5Gs68dFR7JG6dWkJ0fFx+TpSX89IDMnwcHU1yKec12Yz3rlc4HkeLwjkXJpPip3U3+7vIx6P4ymph4eG5PlwTQ0lMdytlmBxMWKtrXLeT0zA5XTibvj9fjxfXETkb/3N/Dz2dneVuiTZtliU/rPSUsQ5ziuxZYG03IIlJdKKUPJjdRUAKMmzuTnskB/VYbdTtd9HR4g2NCi9Z2VliDY1BSnBaUEBzsrLqXyzWCiQ9HU5HA4afniIUFWV0hOqqMBpURErOM7NxWlhIZOvCwvA7S3Uxq+DA5AnZ3pO8vJYQSArC8c5Oeqx2Rj4udeLQH6+6v2B7GxW8DkjA0JmJpONwUHY7XZGIAgCzCYTeJUewmIFfqMRfEoKlQ2yJbza2oLWcLvdeDI2hk/3+iQWKzAYkJzNjg5srq9TwJ9OJ76YTNScx+ORJT66X1/grKyEbW2NgfPp6XKd/JMZySrHaQsSU1Oe+0/w3WpVgyu5HBlR6lc+H8gioevDwz6JrWwV5+3txyoSFk5DcOX1MnCyJ4Vwfb1zt1UY9SR8aioDpuppaVpwZbPTl+hHF04dOKzk8XBF8DgJC3/woU/W/EciOtELOWi8DDwp//215Q+p7kiKh2lQSAAAAABJRU5ErkJggg==');
   border-color: #ed541d;
 }
 
-/* line 89, ../sass/_application.scss */
+/* line 115, ../sass/_application.scss */
 .messages__list {
   margin: 0;
 }
 
-/* line 90, ../sass/_application.scss */
+/* line 116, ../sass/_application.scss */
 .messages__item {
   list-style-image: none;
 }
 
 /* Core/module installation error messages. */
-/* line 92, ../sass/_application.scss */
+/* line 118, ../sass/_application.scss */
 .messages--error p.error {
   color: #333;
 }
 
 /* System status report. */
-/* line 94, ../sass/_application.scss */
+/* line 120, ../sass/_application.scss */
 .ok, .messages--status {
   background-color: #f8fff0;
   color: #234600;
 }
 
-/* line 95, ../sass/_application.scss */
+/* line 121, ../sass/_application.scss */
 .warning, .messages--warning {
   background-color: #fffce5;
   color: #840;
 }
 
-/* line 96, ../sass/_application.scss */
+/* line 122, ../sass/_application.scss */
 .error, .messages--error {
   background-color: #fef5f1;
   color: #8c2e0b;

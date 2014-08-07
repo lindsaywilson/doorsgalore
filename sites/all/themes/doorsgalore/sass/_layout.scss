@@ -1,0 +1,25 @@
+
+
+/* ------------------------------ */
+/* MAIN LAYOUT 
+/* ------------------------------ */
+
+.not-front{
+	#content { float: left; width: 58%; margin-left: 21%; margin-right: -79%;}
+	#sidebar-left { float: left; width: 21%; margin-left: 0%; margin-right: -21%;
+		.inner{}
+	}
+	#sidebar-right { float: left; width: 21%; margin-left: 79%; margin-right: -100%;
+		.inner{}
+	}
+}
+
+
+/* ------------------------------ */
+/* MAIN LAYOUT 
+/* ------------------------------ */
+
+.grid{ float:left}
+.grid-half{ width:50%}
+.grid-third{ width:33.333%}
+.grid-quarter{ width:25%} 
