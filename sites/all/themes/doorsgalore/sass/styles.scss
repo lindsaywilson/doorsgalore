@@ -1,0 +1,14 @@
+/**
+ * @file
+ * Styles are organized using the SMACSS technique. @see http://smacss.com/book/
+ *
+ * When you turn on CSS aggregation at admin/config/development/performance, all
+ * of these @include files will be combined into a single file.
+ */
+
+@import "zen";
+@import "constant";
+@import "fonts";
+@import "normalize";
+@import "application";
+@import "behavior";

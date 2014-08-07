@@ -1,0 +1,200 @@
+/**
+ * Fonts
+ */
+
+$open: 'open_sansregular';
+$opensemibold: 'open_sanssemibold';
+$openbold: 'open_sansbold';
+$openlight: 'open_sanslight';
+$openitalic: 'open_sansitalic';
+$opensemibolditalic: 'open_sanssemibold_italic';
+$openbolditalic: 'open_sansbold_italic';
+$openextrabold: 'open_sansextrabold';
+$openextrabolditalic: 'open_sansextrabold_italic';
+$openlightitalic: 'open_sanslight_italic';
+$droidbold: 'droid_sansbold';
+$droid: 'droid_sansregular';
+$create: 'crete_roundregular';
+$createitalic: 'crete_rounditalic';
+
+
+$base-font-size:  0.8125em; // The font size set on the root html element. based on a default font-size of 16px which makes 13px default
+$base-line-height: 2em; // This line-height determines the basic unit of vertical rhythm.
+
+$s70: 538.46154%;   /* 70px */
+$s64: 492.30769%;   /* 64px */
+$s60: 461.53846%;   /* 60px */
+$s56: 430.76923%;   /* 56px */
+$s50: 384.461538%;  /* 50px */
+$s42: 323.07692%;   /* 42px */
+$s40: 307.6923%;    /* 40px */
+$s36: 276.922307%;  /* 36px */
+$s34: 261.53846%;   /* 34px */
+$s30: 230.76923%;   /* 30px */
+$s26: 200%;         /* 26px */
+$s24: 184.61538%;   /* 24px */
+$s22: 169.23076%;   /* 22px */
+$s20: 153.84615%;   /* 20px */
+$s18: 138.46153%;   /* 18px */
+$s16: 123.07692%;   /* 16px */
+$s15: 115.38461%;   /* 14px */
+$s14: 107.6923%;    /* 14px */
+$s13: 100%;         /* 13px */
+$s12: 93%;          /* 12px */
+$s11: 85%;          /* 11px */
+
+
+
+
+/*
+ * Colors
+ */
+$grey: #544c45;
+$grey_1: #eeeeee;
+$grey_2: #717171;
+$grey_3: #3e3e3e;
+$grey_4: #c8c8c8;
+
+
+
+/*
+ * Grid
+ */
+$zen-column-count: 12;
+$zen-gutter-width: 40px; 
+
+
+// Container Width
+$contentWidth: 1400px;
+
+// The amount lists, blockquotes and comments are indented.
+$indent-amount: 30px;
+
+
+
+/*
+ * Mixins
+ */ 
+@mixin container($width: $contentWidth){
+    margin: 0 auto;
+    max-width: $width;
+}
+
+@mixin content(){
+    margin: 0 auto;
+    padding: zen-half-gutter();
+    max-width: $contentWidth;
+}
+
+
+@mixin font($font,$size,$color: $grey_0,$lineheight:$base-line-height,$weight:normal,$style:normal) {
+    font-family: $font;
+    font-size: $size;
+    color: $color;
+    line-height: $lineheight;
+    font-weight: $weight;
+    font-style: $style;
+}
+
+@mixin cornerborder ($radius){
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius; 
+    border-radius: $radius;
+    background-clip: padding-box;
+ }
+
+
+@mixin gradient($start,$end){
+    background-color: $end;
+    background-image: -webkit-gradient(linear, left top, left bottom, from($start), to($end)); /* Chrome, Safari 4+ */
+    background-image: -webkit-linear-gradient(top, $start, $end); /* Chrome 10-25, iOS 5+, Safari 5.1+ */
+    background-image:    -moz-linear-gradient(top, $start, $end); /* Firefox 3.6-15 */
+    background-image:      -o-linear-gradient(top, $start, $end); /* Opera 11.10-12.00 */
+    background-image:         linear-gradient(to bottom, $start, $end);
+}
+
+@mixin shadow ($hor, $ver, $blur, $spread_radius, $color) {
+    -webkit-box-shadow: $hor $ver $blur $spread_radius $color;
+    -moz-box-shadow: $hor $ver $blur $spread_radius $color;
+    box-shadow: $hor $ver $blur $spread_radius $color;
+}
+
+
+@mixin transition ($duration:.2s, $ease: linear) {
+    -webkit-transition: all $duration $ease;
+    -moz-transition: all $duration $ease;
+    -ms-transition: all $duration $ease;
+    -o-transition: all $duration $ease;
+    transition: all $duration $ease;
+}
+
+@mixin translate3d ($first, $second, $third) {
+    -webkit-transform: translate3d($first, $second, $third);
+    -moz-transform: translate3d($first, $second, $third);
+    -o-transform: translate3d($first, $second, $third);
+    -ms-transform: translate3d($first, $second, $third);
+    transform: translate3d($first, $second, $third);
+}
+
+
+/*
+ * Nesting
+ */
+.clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+
+
+/*
+ * Icon Fonts
+ */ 
+@mixin fonticon ($content, $size:24px, $color: #FFFFFF) {
+    
+    &:before {
+        position: absolute;
+        content: $content;
+        color: $color;
+        font-size:$size;
+        font-family:'icomoon';
+        font-style:normal;
+        font-weight:normal;
+        speak:none;
+        display:block;
+        text-decoration:inherit;
+        width:$size;
+        height:$size;
+        text-align:center;
+        -webkit-font-smoothing:antialiased;
+        font-smoothing:antialiased;
+        text-rendering:optimizeLegibility;
+        line-height: $size;
+        float: left;
+        
+    }
+}
+
+
+
+
+/*
+ * Transparent Gradient
+ */
+@mixin transparentGradient(){
+    /* IE9 SVG, needs conditional override of 'filter' to 'none' */
+    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIgc3RvcC1vcGFjaXR5PSIwIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNmZmZmZmYiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+    background: -moz-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,0)), color-stop(100%,rgba(255,255,255,1))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 100%); /* IE10+ */
+    background: linear-gradient(to bottom, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#ffffff',GradientType=0 ); /* IE6-8 */
+}
+
+
+
