@@ -1,11 +1,10 @@
 
 
-/* ------------------------------ */
+/* -------------------------------------------- */
 /* MAIN 
-/* ------------------------------ */
+/* -------------------------------------------- */
 
-#page{ margin:0 auto; max-width:960px; padding:0 10px }
-#header{ }
+#page{ padding-bottom:30px}
 #main{ padding-top:15px}
 #content{ position:relative;}
 
@@ -14,9 +13,60 @@
 }
 
 
-/* ------------------------------ */
+/* -------------------------------------------- */
+/* HEADER 
+/* -------------------------------------------- */
+
+#header{ position:relative;
+	#header-blocks{ position:absolute; left:60%; top:45px; line-height:1.1; color:$lightbrown;
+		.info-block{ float:left}
+		.get-a-quote{ margin-right:30px}
+		h5{ font-size:$s14; color:$lightbrown}
+		h5 span{ display:none}
+		p{ margin-bottom:5px; font-size:$s11}
+	}
+	#header-nav{ position:absolute; left:60%; top:20px}
+}
+.info-block strong{ font-family:$droidbold;}
+
+
+/* -------------------------------------------- */
+/* FOOTER 
+/* -------------------------------------------- */
+
+#buckets{ background:$light; border-bottom:2px solid #e6e6e6; padding:50px;
+	.grid{ text-align:center;  line-height:1.5; padding-bottom:40px; border-right:1px solid #bbb7b5;
+		&:last-of-type{ border-right:none}
+		p{ padding:0 60px}
+	}
+	h2{ margin-bottom:5px;}
+}	
+
+#footer{ background:$cream; padding:20px 0 30px; color:$lightbrown; line-height:1.1; font-family:$droid; 
+	a{ color:$lightbrown; text-decoration:none}
+	a:hover{ text-decoration:underline}
+	a.green{ color:$green}
+	h5{ color:$lightbrown;}
+	#footer-right{ float:left; width:30%; padding:0;
+		p{ margin-bottom:5px; font-size:$s11}
+		.visit-showroom{ margin-top:20px}
+		.images{ position:absolute; right:10px; top:0}
+	}
+	.nav{ float:left; width:70%; padding-right:20px;
+		ul{ @include reset;
+			li{ @include reset; border-right:1px solid #c69c6d; display:inline;
+				a{ @include font($crete,$s13, $lightbrown, 1); padding:0 5px}
+				&:last-of-type{ border:none}
+			}
+		}
+	}
+	#copyright{ position:absolute; left:10px; bottom:-10px; font-size:$s11}
+}
+
+
+/* -------------------------------------------- */
 /* NAV
-/* ------------------------------ */
+/* -------------------------------------------- */
 
 #nav{ background:$brown;
 	ul{ @include reset; text-align:center;
@@ -26,50 +76,90 @@
 			a:hover{ color:#fff}
 		}
 	}
+	#header-nav ul { line-height:1;
+		li{ border-right: 1px solid #e4d1bb; padding:0;
+			&:last-child{ border:none}
+			&:first-child a{ padding-left:0}
+			a{ color:$lightbrown; font-size:12px; padding:0 5px; border:none;}
+			a:hover{ text-decoration:underline}
+		}
+	}
 }
 
 
-/* ------------------------------ */
+/* -------------------------------------------- */
 /* HTML ELEMENTS
-/* ------------------------------ */
+/* -------------------------------------------- */
 
 h1, h2, h3, h4, h5{ @include font($crete, 100%, $brown, 1.2)}
-h1{ font-size:$s26}
+h1{ font-size:$s26; margin-bottom:20px}
 h2{ font-size:$s18; margin-bottom:15px}
-h3{ font-size:$s14; }
-h4{}
-h5{}
+h3{ font-size:$s16; margin:20px 0 10px}
+h4{ font-size:$s14; }
+h5{ font-size:$s13; margin-bottom:5px}
+h6{ @include font($openbold, $s11, $brown, 100%); margin-top:15px }
 
-p, ul, ol{ margin:0 0 20px; padding:0;} 
-ul, ol{ margin-left:1em; padding:0; }
+p, ul, ol{ margin:0 0 20px 0}
 p:last-child, ul:last-child, ol:last-child{ margin-bottom:0}
-ul{ list-style:disc; }
-ul li, ol li{ padding-left:5px; padding-bottom:5px; }
-ul p, ol p,
-ul ul,
-ol ol{ font-size:1em; }
-ul ul{ list-style:none;}
+ul,
+ol{ margin-left:40px}
+ul li,
+ol li{ padding-left:10px}
+ul li{ list-style:disc; }
+ol li{ list-style:decimal;}
+strong{ font-family:$openbold; font-weight:normal}
 
 a{ color:$brown; outline:none; @include transition}
 a:active{ outline:none}
 a:link{ outline:none}
 a:hover{ text-decoration:none}
-img{ vertical-align:middle}
 
-.transition{ -webkit-transition: all .2s ease-in-out; -moz-transition: all .2s ease-in-out; -ms-transition: all .2s ease-in-out; -o-transition: all .2s ease-in-out; transition: all .2s ease-in-out;}
+a.btn{ @include font($crete, $s18, $green, 100%); display:block; position:relative; background:$brown; padding:15px 20px 15px 30px; text-decoration:none}
+a.btn:hover{ background:$darkbrown}
+a.btn:before{ position:absolute; left:20px; color:#fff; content:"\00bb"}
+
+.green, a.green{color:$green}
+
+img{ vertical-align:middle; max-width:100%}
+
+.element-invisible{ display:none}
 
 
-/* ------------------------------ */
-/* PAGE ELEMENTS
-/* ------------------------------ */
+/* -------------------------------------------- */
+/* BLOCKS
+/* -------------------------------------------- */
 
-/*
-----------------------------------*/
+#sidebar-left{
+	.block{ padding:15px 20px;}
+	h2{ margin-bottom:10px}
+}
+
+#need-help{ background:#3d332b; color:#f2f2f2;
+	.phone{ @include font($crete, $s18, $green, 1.2); display:block}
+	a{ color:$light; text-decoration:none}
+}
+
+#view-gallery{ margin-top:20px; background:$brown}
+
+#reviews{ border-top:1px solid #e6e6e6; text-align:right; margin:30px -5px 0 -5px; padding-top:5px;
+	span{ font-size:10px; display:inline-block; line-height:1}
+	span:first-of-type{ padding:0 5px 0 0; border-right:1px solid #e6e6e6; margin-right:5px;position:relative; top:5px}
+	a{ text-decoration:none}
+	a:hover{ text-decoration:underline}
+}
 
 
-/* ------------------------------ */
+/* -------------------------------------------- */
 /* CONTENT TYPES
-/* ------------------------------ */
+/* -------------------------------------------- */
+
+.node{ position:relative}
+
+/* PAGE
+----------------------------------*/
+#page-image{ margin-bottom:20px}
+#intro,
+.node-page .field-name-body{ font-family:$openbold; font-size:$s14; line-height:1.5}
 
 /* TESTIMONIAL
 ----------------------------------*/
@@ -79,33 +169,41 @@ img{ vertical-align:middle}
 	.quote{ @include font($crete, 2em, $green, 0.6); position:relative; top:.2.4em}
 }
 
+/* DOORS
+----------------------------------*/
+.node-exterior-door{ line-height:1.5}
+.door-details{ font-size:$s11; margin:0}
+.price{ font-size:$s14}
 
-/* ------------------------------ */
+
+/* -------------------------------------------- */
 /* VIEWS
-/* ------------------------------ */
+/* -------------------------------------------- */
 
 /* GLOBAL VIEW STYLES
 ----------------------------------*/
 .views-row{ position:relative; }
-.views-field-edit-node a{ position:absolute; right:1px; top:1px; font-size:.9em; text-transform:uppercase; display:inline-block; padding:4px 8px; text-decoration:none; z-index:2; line-height:1; color:#fff; background:#000; display:inline; height:auto }
+.views-field-edit-node a{ position:absolute; right:1px; top:1px; font-size:$s11; text-transform:uppercase; display:inline-block; padding:2px 5px; text-decoration:none; z-index:2; line-height:1; color:#fff; background:rgba(0,0,0,.7); display:inline; height:auto }
 .views-field-edit-node a:hover{ opacity:0.6}
 
 
-/*
+/* DOORS
 ----------------------------------*/
+.view-exterior-doors{
+	.views-row{ float:left; max-width:85px; margin-right:25px}
+}	
 
 
-
-/* ------------------------------ */
+/* -------------------------------------------- */
 /* DRUPAL OVERRIDES
-/* ------------------------------ */
+/* -------------------------------------------- */
 div.messages{ font-size:1em}
 div.messages p,
 div.messages ul{ font-size:1em}
 
-ul.tabs-primary{ position:absolute; top:0; right:0; margin:0; padding:0; font-size:1em; background:none;}
+ul.tabs-primary{ position:absolute; top:0; right:0; margin:0; padding:0; font-size:$s11; background:none;}
 ul.tabs-primary li{ margin:0; padding:0 1px 0 0; border:none; background:none; text-shadow:none; border-radius:0; list-style:none; float:left}
-ul.tabs-primary li a{ border:none; background:#000; color:#fff; text-transform:uppercase; letter-spacing:0; border-radius:0; padding:2px 5px; text-decoration:none }
+ul.tabs-primary li a{ border:none; background:rgba(0,0,0,.7); color:#fff; text-transform:uppercase; letter-spacing:0; border-radius:0; padding:2px 5px; text-decoration:none }
 ul.tabs-primary li a:hover{ opacity:0.6}
 
 .messages { margin: 20px 0; padding: 10px 10px 10px 50px; background-image: inline-image("message-24-ok.png"); @if $legacy-support-for-ie6 or $legacy-support-for-ie7 { *background-image: image-url("message-24-ok.png"); } background-position: 8px 8px;  background-repeat: no-repeat; border: 1px solid #be7; }

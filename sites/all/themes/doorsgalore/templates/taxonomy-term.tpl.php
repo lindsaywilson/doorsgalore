@@ -48,9 +48,22 @@
   <?php endif; ?>
 
   <div class="content">
-  	<div id="intro"><?php print $term->description ?></div>
-    <?php //print render($content); ?>
-    <?php print doorsgalore_block_render('views', 'exterior_doors-block'); ?>
+    
+    <?php
+	
+		switch($term_name){
+			
+			case 'Entry Doors':
+			case 'Patio/French Doors':
+				$node = node_load(7);
+				print '<div id="intro">'.$node->body['und'][0]['safe_value'].'</div>';
+				print doorsgalore_block_render('views', 'exterior_doors-block');
+			break;
+			
+		}
+	
+	?>
+    
   </div>
 
 </div>

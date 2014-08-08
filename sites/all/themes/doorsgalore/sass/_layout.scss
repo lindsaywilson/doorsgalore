@@ -4,8 +4,10 @@
 /* MAIN LAYOUT 
 /* ------------------------------ */
 
+.width{ @include container; }
+
 .not-front{
-	#content { float: left; width: 58%; margin-left: 21%; margin-right: -79%;}
+	#content { float: left; width: 58%; margin-left: 21%; margin-right: -79%; padding:0 20px}
 	#sidebar-left { float: left; width: 21%; margin-left: 0%; margin-right: -21%;
 		.inner{}
 	}
@@ -14,10 +16,7 @@
 	}
 }
 
-
-/* ------------------------------ */
-/* MAIN LAYOUT 
-/* ------------------------------ */
+.width{ @include container; position:relative; }
 
 .grid{ float:left}
 .grid-half{ width:50%}

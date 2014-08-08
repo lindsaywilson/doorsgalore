@@ -50,6 +50,8 @@ $s11: 85%;          /* 11px */
  * Colors
  */
 $brown: #544c45;
+$darkbrown: #3d332b;
+$lightbrown: #564b24;
 $cream: #dddbcc;
 $green: #39b54a;
 $light: #f2f2f2;
@@ -60,11 +62,11 @@ $light: #f2f2f2;
  * Grid
  */
 $zen-column-count: 12;
-$zen-gutter-width: 40px; 
+$zen-gutter-width: 20px; 
 
 
 // Container Width
-$contentWidth: 1400px;
+$contentWidth: 960px;
 
 // The amount lists, blockquotes and comments are indented.
 $indent-amount: 30px;
@@ -77,6 +79,7 @@ $indent-amount: 30px;
 @mixin container($width: $contentWidth){
     margin: 0 auto;
     max-width: $width;
+	padding:0 10px;
 }
 
 @mixin content(){
