@@ -1,0 +1,24 @@
+
+h1, h2, h3, h4, h5{ @include font($crete, 100%, $grey, 1.2)}
+h1{ font-size:$s26; margin:15px 0 20px}
+h2{ font-size:$s18; margin-bottom:15px}
+h3{ font-size:$s16; margin:20px 0 10px}
+h4{ font-size:$s14; }
+h5{ font-size:$s13; margin-bottom:5px}
+h6{ @include font($openbold, $s11, $grey, 100%); margin-top:15px; text-transform:uppercase }
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a{ text-decoration:none; }
+
+p, ul, ol{ margin:0 0 20px 0}
+p:last-child, ul:last-child, ol:last-child{ margin-bottom:0}
+ul,
+ol{ margin-left:40px}
+ul li,
+ol li{ padding-left:10px}
+ul li{ list-style:disc; }
+ol li{ list-style:decimal;}
+strong{ font-family:$openbold; font-weight:normal}
+
+a{ color:$grey; outline:none; @include transition}
+a:active{ outline:none}
+a:link{ outline:none}
+a:hover{ text-decoration:none; color:#000}

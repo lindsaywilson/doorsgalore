@@ -49,8 +49,8 @@ $s11: 85%;          /* 11px */
 /*
  * Colors
  */
-$brown: #544c45;
-$darkbrown: #3d332b;
+$grey: #544c45;
+$darkgrey: #3d332b;
 $lightbrown: #564b24;
 $cream: #dddbcc;
 $green: #39b54a;
@@ -104,6 +104,10 @@ $indent-amount: 30px;
     font-style: $style;
 }
 
+@mixin arrow($color:$green, $left:0){
+	position:absolute; left:$left; color:$color; content:"\00bb"
+}
+
 @mixin cornerborder ($radius){
     -webkit-border-radius: $radius;
     -moz-border-radius: $radius; 
@@ -121,10 +125,14 @@ $indent-amount: 30px;
     background-image:         linear-gradient(to bottom, $start, $end);
 }
 
-@mixin shadow ($hor, $ver, $blur, $spread_radius, $color) {
-    -webkit-box-shadow: $hor $ver $blur $spread_radius $color;
-    -moz-box-shadow: $hor $ver $blur $spread_radius $color;
-    box-shadow: $hor $ver $blur $spread_radius $color;
+@mixin text-shadow($x: 2px, $y: 2px, $blur: 5px, $color: rgba(0,0,0,.3)) {
+	text-shadow: $x $y $blur $color;
+}
+
+@mixin shadow ($hor, $ver, $blur, $spread_radius, $color, $inset: "") {
+    -webkit-box-shadow: $hor $ver $blur $spread_radius $color $inset;
+    -moz-box-shadow: $hor $ver $blur $spread_radius $color $inset;
+    box-shadow: $hor $ver $blur $spread_radius $color $inset;
 }
 
 
@@ -181,8 +189,7 @@ $indent-amount: 30px;
         font-smoothing:antialiased;
         text-rendering:optimizeLegibility;
         line-height: $size;
-        float: left;
-        
+		left:0;        
     }
 }
 

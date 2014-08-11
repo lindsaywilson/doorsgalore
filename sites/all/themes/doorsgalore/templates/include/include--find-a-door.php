@@ -1,15 +1,33 @@
 
 
 <?php 
-	$url = $_SERVER['REQUEST_URI'];
-	//print $url;
-	
-	$interior = '<ul><li><a href="/interior-doors">Interior Doors</a><ul><li><a href="/interior-doors/bedroom-bathroom">Bedroom/Bathroom</a></li><li><a href="/interior-doors/glass-doors">Glass doors</a></li></ul></li></ul>';
-	
-	$exterior = '<ul><li><a href="/exterior-doors">Exterior Doors</a><ul><li><a href="/exterior-doors/entry-doors">Entry Doors</a></li><li><a href="/exterior-doors/patio-doors">Patio Doors</a></li></ul></li></ul>';         
-
+	$exterior = taxonomy_terms_by_name('exterior_doors');
+	$interior = taxonomy_terms_by_name('interior_doors');
 ?>
 
 <div id="find-a-door" class="block">
 	<h2>Find a Door:</h2>
+    <p><strong><a href="/exterior-doors">Exterior Doors</a></strong></p>
+    <ul>
+    <?php
+		foreach( $exterior as &$t){
+			$term = taxonomy_term_load($t->tid);
+			$path = taxonomy_term_uri($term);
+ 			$url = str_replace('taxonomy', '', drupal_get_path_alias($path['path']));
+			print '<li><a href="'.$url.'">'.$term->name.'</a></li>';
+		}
+	?>
+    </ul>
+    <p><strong><a href="/interior-doors">Interior Doors</a></strong></p>
+    <ul>
+    <?php
+		foreach( $interior as &$t){
+			$term = taxonomy_term_load($t->tid);
+			$path = taxonomy_term_uri($term);
+ 			$url = str_replace('taxonomy', '', drupal_get_path_alias($path['path']));
+			$hash = str_replace('doors/','doors#',$url);
+			print '<li><a href="'.$hash.'">'.$term->name.'</a></li>';
+		}
+	?>
+    </ul>
 </div>

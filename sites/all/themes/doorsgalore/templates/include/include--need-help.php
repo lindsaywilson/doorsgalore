@@ -6,5 +6,5 @@ Phone:
 </div>
 
 <div id="view-gallery">
-	<a class="btn" href="/gallery">View Our Gallery</a>
+	<a class="btn_flat" href="/gallery">View Our Gallery</a>
 </div>

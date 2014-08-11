@@ -6,6 +6,7 @@
  * Complete documentation for this file is available online.
  * @see https://drupal.org/node/1728148
  */
+ 
 ?>
 
 <div id="page" class="width">
@@ -31,9 +32,9 @@
     <div id="content" class="column" role="main">
       <a id="main-content"></a>
       <?php print $messages; ?>
-      <?php print render($tabs); ?>
+      <?php if(!$is_front) print render($tabs); ?>
       <?php print render($page['help']); ?>
-      <?php if ($title): ?>
+      <?php if ($title && !$is_front): ?>
         <h1 class="page__title title" id="page-title"><?php print $title; ?></h1>
       <?php endif; ?>
       <?php if ($action_links): ?>
@@ -44,9 +45,45 @@
       <?php
 	  	if(isset($node)){
 			switch($node->nid){
+				
+				// Exterior Doors Taxonomy
+				case 7:
+					print doorsgalore_block_render('views', 'taxonomy_exterior_doors-block');
+				break;
+				
+				// Exterior Doors List
 				case 17:
 					print doorsgalore_block_render('views', 'exterior_doors-block');
+					print doorsgalore_block_render('views', 'exterior_doors-order');
+					// Configurations
+					print doorsgalore_block_render('block', 3);
+					print doorsgalore_block_render('block', 4);
+					print doorsgalore_block_render('block', 5);
+					print doorsgalore_block_render('block', 6);
+					print doorsgalore_block_render('block', 7);
 				break;
+				
+				// Interior Doors List
+				case 8:
+					print doorsgalore_block_render('views', 'interior_doors-block');
+					print doorsgalore_block_render('views', 'interior_doors-order');
+				break;
+				
+				// Hardware List
+				case 37:
+					print '<div class="views-door-hardware">';
+					$hardware = taxonomy_terms_by_name('door_hardware');
+					foreach( $hardware as &$t){
+						$term = taxonomy_term_load($t->tid);
+						$id = strtolower(str_replace(' ','-',$term->name));
+						print '<div id="'.$id.'">';
+						print '<h2>'.$term->name.'</h2>';
+						print views_embed_view('door_hardware', 'block' , $t->tid);
+						print '</div>';
+					}
+					print '</div>';
+				break;
+				
 			}
 		}
 	  ?>

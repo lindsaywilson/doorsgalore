@@ -14,8 +14,30 @@
 
     $(document).ready(function(){
         
-        
-		     
+        // Doors views items
+		$('.view-doors .views-row').each( function(){
+			w = $(this).find('img').width();
+			$(this).css('max-width',w+'px')
+		})
+		
+		
+		// Doors spec items accordion
+		$('.door-specs h2.block-title').click( function(){
+			$(this).toggleClass('plus');
+			$(this).parent().find('.block-content').slideToggle();
+		});
+		
+		// Interior Doors Accordion
+		$('.view-interior-doors h3').click( function(){
+			$(this).toggleClass('plus');
+			$(this).next().slideToggle();
+		});
+		
+		//Interior Doors Hash
+		$('.view-interior-doors h2').each( function(){
+			hash = $(this).text().replace(/ /g,'-').toLowerCase();
+			$(this).attr('id',hash);
+		});
         
         
     });

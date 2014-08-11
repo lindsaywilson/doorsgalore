@@ -55,11 +55,16 @@ function doorsgalore_preprocess_html(&$variables, $hook) {
 
 function doorsgalore_preprocess_page(&$variables, $hook) {
   
-  if (arg(0) == 'taxonomy' && arg(1) == 'term' && is_numeric(arg(2))){
-     unset($variables['page']['content']['system_main']['nodes']);
-     unset($variables['page']['content']['system_main']['pager']);
-     unset($variables['page']['content']['system_main']['no_content']);
-   }
+	/* FUNCTION TO GET TERMS  */
+	function taxonomy_terms_by_name($name) {
+		$vocab = taxonomy_vocabulary_machine_name_load($name);
+		$query = new EntityFieldQuery();
+		$result = $query
+		->entityCondition('entity_type', 'taxonomy_term')
+		->propertyCondition('vid', $vocab->vid)
+		->execute();
+		return $result['taxonomy_term'];
+	}
   
 }
 // */
@@ -141,6 +146,7 @@ function doorsgalore_preprocess_block(&$variables, $hook) {
 function doorsgalore_block_render($module, $block_id){
 
     $block = block_load($module, $block_id);
+	$block->region = 'none';
     
     $block_content = _block_render_blocks(array($block));
     
@@ -150,5 +156,6 @@ function doorsgalore_block_render($module, $block_id){
     
     return $block_rendered;
     
- 
 }
+
+

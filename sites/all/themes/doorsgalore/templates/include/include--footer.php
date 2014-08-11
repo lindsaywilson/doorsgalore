@@ -3,16 +3,16 @@
 	<div class="width clearfix">
     
     	<div class="grid grid-third">
-        	<h2>See Our Gallery of Doors:</h2>
-            <p>Take a look at some of the custom doors we have installed.</p>
+        	<span class="icon-door"></span>
+        	<?php print doorsgalore_block_render('block', 8); ?>
         </div>
         <div class="grid grid-third">
-        	<h2>See Our Gallery of Doors:</h2>
-            <p>Take a look at some of the custom doors we have installed.</p>
+        	<span class="icon-calculator"></span>
+        	<?php print doorsgalore_block_render('block', 9); ?>
         </div>
         <div class="grid grid-third">
-        	<h2>See Our Gallery of Doors:</h2>
-            <p>Take a look at some of the custom doors we have installed.</p>
+        	<span class="icon-estimate"></span>
+        	<?php print doorsgalore_block_render('block', 10); ?>
         </div>
     
     </div>
@@ -27,8 +27,8 @@
         	<div class="info-block get-a-quote"><?php print doorsgalore_block_render('block', 1); ?></div>
 			<div class="info-block visit-showroom"><?php print doorsgalore_block_render('block', 2); ?></div>
             <span class="images">
-            	<img src="<?php print path_to_theme() ?>/images/logo_bbb.png" />
-                <img src="<?php print path_to_theme() ?>/images/logo_homestars.png" />
+            	<img src="/<?php print path_to_theme() ?>/images/logo_bbb.png" />
+                <img src="/<?php print path_to_theme() ?>/images/logo_homestars.png" />
             </span>
         </div>
         

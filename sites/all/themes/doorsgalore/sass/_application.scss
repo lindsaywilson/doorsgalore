@@ -37,9 +37,10 @@
 #buckets{ background:$light; border-bottom:2px solid #e6e6e6; padding:50px;
 	.grid{ text-align:center;  line-height:1.5; padding-bottom:40px; border-right:1px solid #bbb7b5;
 		&:last-of-type{ border-right:none}
-		p{ padding:0 60px}
+		p{ padding:0 50px; @include font($crete, $s13, $grey, 1.2)}
 	}
-	h2{ margin-bottom:5px;}
+	h3{ margin-bottom:10px; font-size:$s18}
+	[class*="icon-"]{ font-size:5em; @include text-shadow()}
 }	
 
 #footer{ background:$cream; padding:20px 0 30px; color:$lightbrown; line-height:1.1; font-family:$droid; 
@@ -68,7 +69,7 @@
 /* NAV
 /* -------------------------------------------- */
 
-#nav{ background:$brown;
+#nav{ background:$grey;
 	ul{ @include reset; text-align:center;
 		li{ @include reset; display:inline-block; padding:8px 0;
 			&:last-child a{ border-right:none;}
@@ -91,13 +92,14 @@
 /* HTML ELEMENTS
 /* -------------------------------------------- */
 
-h1, h2, h3, h4, h5{ @include font($crete, 100%, $brown, 1.2)}
-h1{ font-size:$s26; margin-bottom:20px}
+h1, h2, h3, h4, h5, h6{ @include font($crete, 100%, $grey, 1.2)}
+h1{ font-size:$s26; margin:15px 0 20px}
 h2{ font-size:$s18; margin-bottom:15px}
 h3{ font-size:$s16; margin:20px 0 10px}
 h4{ font-size:$s14; }
 h5{ font-size:$s13; margin-bottom:5px}
-h6{ @include font($openbold, $s11, $brown, 100%); margin-top:15px }
+h6{ @include font($openbold, $s11, $grey, 100%); margin:20px 0 15px; text-transform:uppercase }
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a{ text-decoration:none; }
 
 p, ul, ol{ margin:0 0 20px 0}
 p:last-child, ul:last-child, ol:last-child{ margin-bottom:0}
@@ -109,18 +111,23 @@ ul li{ list-style:disc; }
 ol li{ list-style:decimal;}
 strong{ font-family:$openbold; font-weight:normal}
 
-a{ color:$brown; outline:none; @include transition}
+a{ color:$grey; outline:none; @include transition}
 a:active{ outline:none}
 a:link{ outline:none}
-a:hover{ text-decoration:none}
+a:hover{ text-decoration:none; color:#000}
 
-a.btn{ @include font($crete, $s18, $green, 100%); display:block; position:relative; background:$brown; padding:15px 20px 15px 30px; text-decoration:none}
-a.btn:hover{ background:$darkbrown}
-a.btn:before{ position:absolute; left:20px; color:#fff; content:"\00bb"}
+a.btn{ @include font($crete, $s13, $green, 100%); border:1px solid #989898; @include cornerborder(4px); text-decoration:none; @include gradient(#fff, #e6e7e8); padding:2px 10px 2px 20px; position:relative; @include shadow(0,-1px,0,0,#fefefe, inset);
+	&:before{ @include arrow($green, 10px); top:3px}
+	&:hover{ @include gradient(#fdfdfd,#d3d3d3)}
+}
+
+a.btn_flat{ @include font($crete, $s18, $green, 100%); display:block; position:relative; background:$grey; padding:15px 20px 15px 30px; text-decoration:none}
+a.btn_flat:hover{ background:$darkgrey}
+a.btn_flat:before{ @include arrow(#fff, 20px)}
 
 .green, a.green{color:$green}
 
-img{ vertical-align:middle; max-width:100%}
+img{ vertical-align:middle; max-width:100%; height:auto !important}
 
 .element-invisible{ display:none}
 
@@ -134,18 +141,82 @@ img{ vertical-align:middle; max-width:100%}
 	h2{ margin-bottom:10px}
 }
 
+#find-a-door{ background:$grey;
+	p{ @include font($droidbold, $s12, $cream, 100%); margin:15px 0 3px;
+		a{ color:$cream; text-decoration:none}
+		a:hover{ color:#fff}
+	}
+	ul{ @include reset; line-height:1.2;
+		li{ @include reset;
+			a{ @include font($droid, $s12, $cream, 100%); text-decoration:none}
+			a:hover{ color:#fff}
+			a:before{ content:'\2013\00a0'}
+		}
+	}
+}
+
 #need-help{ background:#3d332b; color:#f2f2f2;
 	.phone{ @include font($crete, $s18, $green, 1.2); display:block}
 	a{ color:$light; text-decoration:none}
+	a:hover{ color:#fff}
 }
 
-#view-gallery{ margin-top:20px; background:$brown}
+#view-gallery{ margin-top:20px; background:$grey}
 
 #reviews{ border-top:1px solid #e6e6e6; text-align:right; margin:30px -5px 0 -5px; padding-top:5px;
 	span{ font-size:10px; display:inline-block; line-height:1}
 	span:first-of-type{ padding:0 5px 0 0; border-right:1px solid #e6e6e6; margin-right:5px;position:relative; top:5px}
 	a{ text-decoration:none}
 	a:hover{ text-decoration:underline}
+}
+
+.door-specs{ margin-top:40px;
+	h2{ font-size:$s14; border-bottom:1px solid $grey; padding:0 0 8px 25px; margin:0; position:relative; cursor:pointer;
+		@include fonticon('\e600', 13px);
+		&:before{ background:$grey; width:11px; height:11px; line-height:11px; padding:2px;}
+		&.plus:before{ content:"\e601";}
+		&:hover:before{ background:$darkgrey}
+	}
+	p{ font-size:$s11; line-height:1.2}
+}
+
+// Door Configurations
+#block-block-3{
+	.grid{ width:25%; text-align:center; margin-top:20px}
+	.grid p{ max-width:85%; margin:10px auto 0}
+}
+
+// Door Styles
+#block-block-4 img:not(:last-of-type){ margin-right:8px}
+
+// Door Colours
+#block-block-5{ 
+	.grid{ margin:0 8px 5px 0}
+	h5{ display:block; font-family:$opensemibold; font-size:$s11; color:#000; margin:20px 0 10px}
+	strong{ display:block; font-family:$opensemibold; font-size:$s11; color:#000}
+	.colour{ width:85px; height:55px; }
+	.white{ background:#f5f4f2}
+	.bone{ background:#f7ebd3}
+	.red{ background:#88292d}
+	.black{ background:#231f20}
+	.terracotta{ background:#948675}
+	.cherry{ background:#472f2d}
+	.green{ background:#003f2e}
+	.sandstone{ background:#958671}
+	.grey{ background:#736f6e}
+	.musket{ background:#736f6e}
+}
+
+// Door Materials
+#block-block-6{
+	.grid:not(:last-of-type){ margin-right:40px}
+	.grid p{ margin:10px 0 0}
+}
+
+// Door harddware
+#block-block-7{ 
+	img:not(:last-of-type){ margin-right:30px}
+	p{ margin:15px 0 20px}
 }
 
 
@@ -171,9 +242,21 @@ img{ vertical-align:middle; max-width:100%}
 
 /* DOORS
 ----------------------------------*/
-.node-exterior-door{ line-height:1.5}
-.door-details{ font-size:$s11; margin:0}
-.price{ font-size:$s14}
+.node-door{ line-height:1.5;
+	.details{ font-size:$s11; margin:0}
+	.price{ font-size:$s14}
+	h6{ text-transform:inherit; margin-bottom:0}
+}
+
+/* HARDWARE
+----------------------------------*/
+.node-door-hardware{ line-height:1.5;
+	h6{ text-transform:inherit; margin-bottom:0}
+	.details{ font-size:$s11; margin:0;
+		ul{ margin:5px 0 5px 10px; }
+		li{ margin:0; padding:0;  }
+	}
+}
 
 
 /* -------------------------------------------- */
@@ -185,13 +268,58 @@ img{ vertical-align:middle; max-width:100%}
 .views-row{ position:relative; }
 .views-field-edit-node a{ position:absolute; right:1px; top:1px; font-size:$s11; text-transform:uppercase; display:inline-block; padding:2px 5px; text-decoration:none; z-index:2; line-height:1; color:#fff; background:rgba(0,0,0,.7); display:inline; height:auto }
 .views-field-edit-node a:hover{ opacity:0.6}
+.views-table.draggable{ width:100%}
+div[id*="-order"]{ margin-top:40px; border-top:1px solid $grey;
+	h2{ margin:20px 0 0; }
+	#edit-actions{ margin-top:20px}
+}
+
+/* PRICE LABEL */
+.views-row:not(.views-row-1) .price-label{ display:none}
+.price-label{ background:#63aa52; color:$light; font-size:.75em; line-height:1; padding:3px 12px 3px 3px;text-transform:uppercase; position:absolute; right:-5px; top:37%; z-index:9;
+	span{ font-size:1.4em; font-weight:bold; display:block; padding-top:2px}
+	&:after{ position:absolute; content:''; font-size: 0px; line-height: 0%; width: 0px; border-top: 5px solid #b1d4a8; border-right: 5px solid #fff; bottom:-5px; right:0}
+}
+
+
+/* TAXONOMY EXTERIOR DOORS
+----------------------------------*/
+.view-taxonomy-exterior-doors{
+	.views-row{ margin-top:40px}
+	.text{ float:right; width:70%; padding-left:20px;}
+	.image{ float:left; width:30%; }
+	h2{ font-size:$s20; position:relative; padding-left:12px}
+	h2 a:before{ @include arrow($green,0)}
+	.description{ font-size:$s11; line-height:1.3; margin:15px 0}
+}
 
 
 /* DOORS
 ----------------------------------*/
-.view-exterior-doors{
-	.views-row{ float:left; max-width:85px; margin-right:25px}
-}	
+.view-doors{
+	.views-row{ float:left; margin:0 25px 25px 0}
+}
+
+/* INTERIOR DOORS
+----------------------------------*/
+.view-interior-doors { padding-top:30px;
+	h2{ margin:0 0 20px}
+	h3{ margin:0 0 30px; font-size:$s14; border-bottom:1px solid $grey; padding:0 0 8px 25px; position:relative; cursor:pointer;
+		@include fonticon('\e600', 13px);
+		&:before{ background:$grey; width:11px; height:11px; line-height:11px; padding:2px;}
+		&.plus:before{ content:"\e601";}
+		&:hover:before{ background:$darkgrey}
+	}
+}
+
+/* DOOR HARDWARE
+----------------------------------*/
+.views-door-hardware{ padding-top:40px;
+	h2{ border-bottom:1px solid $grey; margin:0 0 30px; padding-bottom:10px}
+	.views-row{ float:left; margin-bottom:50px }
+}
+#handle-sets .views-row{ width:33.333%}
+#level-handles .views-row{ width:50%; }
 
 
 /* -------------------------------------------- */
@@ -218,3 +346,20 @@ ul.tabs-primary li a:hover{ opacity:0.6}
 .ok, %ok { background-color: #f8fff0; color: #234600; }
 .warning, %warning { background-color: #fffce5; color: #840; }
 .error, %error { background-color: #fef5f1; color: #8c2e0b; }
+
+
+form th {  text-align: left; /* LTR */  padding-right: 1em; /* LTR */  border-bottom: 3px solid #ccc;}
+form tbody {  border-top: 1px solid #ccc;}
+form table ul {  margin: 0;}
+tr.even,
+tr.odd {  background-color: #eee;  border-bottom: 1px solid #ccc;  padding: 0.1em 0.6em;}
+tr.even {  background-color: #fff;}
+td.active {  background-color: #ddd;}
+td.checkbox,
+th.checkbox {  text-align: center;}
+td.menu-disabled {background: #ccc;}
+tr.drag {background-color: #fffff0;}
+tr.drag-previous {background-color: #ffd;}
+.tabledrag-toggle-weight {font-size: 0.9em;}
+tr.selected td {background: #ffc;}
+a.tabledrag-handle .handle{ width:20px; height:25px}
