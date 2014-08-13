@@ -77,16 +77,9 @@ function doorsgalore_preprocess_page(&$variables, $hook) {
  * @param $hook
  *   The name of the template being rendered ("node" in this case.)
  */
-/* -- Delete this line if you want to use this function
-function doorsgalore_preprocess_node(&$variables, $hook) {
-  $variables['sample_variable'] = t('Lorem ipsum.');
 
-  // Optionally, run node-type-specific preprocess functions, like
-  // doorsgalore_preprocess_node_page() or doorsgalore_preprocess_node_story().
-  $function = __FUNCTION__ . '_' . $variables['node']->type;
-  if (function_exists($function)) {
-    $function($variables, $hook);
-  }
+function doorsgalore_preprocess_node(&$variables, $hook) {
+  if($variables['nid'] == 54 || $variables['nid'] == 55) drupal_add_js('https://maps.googleapis.com/maps/api/js?key=AIzaSyAp7N4odlw30cgO9nO3NSs07SAhkkR53p0');
 }
 // */
 
@@ -158,4 +151,10 @@ function doorsgalore_block_render($module, $block_id){
     
 }
 
+function doorsgalore_price_label($price, $text = 'Installed for:'){
+	print '<div class="price-label">'.$text.' <span>$'.$price.'<sup>*</sup></span></div>';
+}
 
+function doorsgalore_price_footnote(){
+	print '<span class="price-footnote">*Plus taxes/hardware sold seperately.</span>';
+}

@@ -4,7 +4,3 @@ Phone:
 <span class="phone">604.543.8005</span>
 <a href="mailto:sales@doorsgalore.ca">sales@doorsgalore.ca</a>
 </div>
-
-<div id="view-gallery">
-	<a class="btn_flat" href="/gallery">View Our Gallery</a>
-</div>

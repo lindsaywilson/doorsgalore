@@ -28,7 +28,7 @@ if($view->name == 'interior_doors' && $view->current_display == 'block'){
   
     <?php 
 		// Interior door price
-		if($view->name == 'interior_doors' && $view->current_display == 'block' && isset($price)) print '<div class="price-label">Installed for: <span>$'.$price.'</span></div>';
+		if($view->name == 'interior_doors' && $view->current_display == 'block' && isset($price)) doorsgalore_price_label($price);
 	?>
     
     <?php print $row;  ?>

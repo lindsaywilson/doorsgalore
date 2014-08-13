@@ -1,10 +1,11 @@
 
 
-/* -------------------------------------------- */
+/* ---------------------------------------------------------------- */
 /* MAIN 
-/* -------------------------------------------- */
+/* ---------------------------------------------------------------- */
 
-#page{ padding-bottom:30px}
+.front #page-wrap{ background:url(../images/tile_home.jpg) 0 bottom repeat-x}
+.not-front #page{ padding-bottom:30px}
 #main{ padding-top:15px}
 #content{ position:relative;}
 
@@ -13,9 +14,9 @@
 }
 
 
-/* -------------------------------------------- */
+/* ---------------------------------------------------------------- */
 /* HEADER 
-/* -------------------------------------------- */
+/* ---------------------------------------------------------------- */
 
 #header{ position:relative;
 	#header-blocks{ position:absolute; left:60%; top:45px; line-height:1.1; color:$lightbrown;
@@ -30,9 +31,9 @@
 .info-block strong{ font-family:$droidbold;}
 
 
-/* -------------------------------------------- */
+/* ---------------------------------------------------------------- */
 /* FOOTER 
-/* -------------------------------------------- */
+/* ---------------------------------------------------------------- */
 
 #buckets{ background:$light; border-bottom:2px solid #e6e6e6; padding:50px;
 	.grid{ text-align:center;  line-height:1.5; padding-bottom:40px; border-right:1px solid #bbb7b5;
@@ -65,9 +66,9 @@
 }
 
 
-/* -------------------------------------------- */
+/* ---------------------------------------------------------------- */
 /* NAV
-/* -------------------------------------------- */
+/* ---------------------------------------------------------------- */
 
 #nav{ background:$grey;
 	ul{ @include reset; text-align:center;
@@ -88,15 +89,15 @@
 }
 
 
-/* -------------------------------------------- */
+/* ---------------------------------------------------------------- */
 /* HTML ELEMENTS
-/* -------------------------------------------- */
+/* ---------------------------------------------------------------- */
 
 h1, h2, h3, h4, h5, h6{ @include font($crete, 100%, $grey, 1.2)}
 h1{ font-size:$s26; margin:15px 0 20px}
 h2{ font-size:$s18; margin-bottom:15px}
 h3{ font-size:$s16; margin:20px 0 10px}
-h4{ font-size:$s14; }
+h4{ font-size:$s15; font-family:$openbold; margin-bottom:15px}
 h5{ font-size:$s13; margin-bottom:5px}
 h6{ @include font($openbold, $s11, $grey, 100%); margin:20px 0 15px; text-transform:uppercase }
 h1 a, h2 a, h3 a, h4 a, h5 a, h6 a{ text-decoration:none; }
@@ -131,13 +132,254 @@ img{ vertical-align:middle; max-width:100%; height:auto !important}
 
 .element-invisible{ display:none}
 
+.form-item input,
+.form-item textarea,
+.form-submit{ width:100%; border:1px solid #614b4c; border-radius:2px; color:#343434; font-size:$s14; padding:15px; line-height:1; @include gradient(#fdfdfd,#ebecec)}
+.form-submit{ width:100px; color:#010101; font-size:$s15; font-family:$openbold; padding:10px 15px;}
+#edit-actions{ clear:both}
 
-/* -------------------------------------------- */
+
+/* ---------------------------------------------------------------- */
+/* CONTENT TYPES
+/* ---------------------------------------------------------------- */
+
+.node{ position:relative}
+
+.inline-list{
+	ul{ @include reset}
+	li{ display:inline; margin:0 5px 0 0; padding:0}
+	li:before{ content:'\2022'; margin:0 5px 0 0}
+} 
+
+/* PRICE LABEL */
+.price-label{ background:#63aa52; color:$light; font-size:.75em; line-height:1; padding:3px 12px 3px 3px;text-transform:uppercase; position:absolute; right:-5px; top:0; z-index:9;
+	span{ font-size:1.4em; font-weight:bold; display:block; padding-top:2px}
+	&:after{ position:absolute; content:''; font-size: 0px; line-height: 0%; width: 0px; border-top: 5px solid #b1d4a8; border-right: 5px solid transparent; bottom:-5px; right:0}
+	sup{ font-size:.6em;}
+}
+.front{
+	.price-label{ padding:8px 25px 8px 8px; top:50%; margin-top:-30px; right:-9px;
+		span{ font-size:26px; padding:0}
+		&:after{ border-top-color:#32662d; border-width:9px; bottom:-9px}
+		sup{ position:relative; top:5px}
+	}
+}
+.price-footnote{ font-size:9px; line-height:1}
+
+#map-canvas{ height:260px; margin:20px 0}
+
+
+/* PAGE
+----------------------------------*/
+#page-image{ margin-bottom:20px}
+#intro,
+.node-page .field-name-body,
+.node-webform .field-name-body{ font-family:$openbold; font-size:$s15; line-height:1.5}
+
+
+/* TESTIMONIAL
+----------------------------------*/
+#testimonial{ background:$light; padding:15px;
+	p{ font-family:$opensemibolditalic; line-height:1.3; margin-bottom:0}
+	footer{ font-family:$droidbold}
+	.quote{ @include font($crete, 2em, $green, 0.6); position:relative; top:.2.4em}
+}
+
+
+/* DOORS
+----------------------------------*/
+.node-door{ line-height:1.5;
+	.details{ font-size:$s11; margin:0}
+	.price{ font-size:$s14}
+	h6{ text-transform:inherit; margin-bottom:0}
+}
+
+
+/* HARDWARE
+----------------------------------*/
+.node-door-hardware{ line-height:1.5;
+	h6{ text-transform:inherit; margin-bottom:0}
+	.details{ font-size:$s11; margin:0; max-width:330px}
+}
+
+
+/* HOMEPAGE BANNER
+----------------------------------*/
+.node-homepage-banner{ height:380px; background-size:cover; background-position:right 0; padding:45px;
+	.text{ height:100%; background:#fff; background:rgba(255,255,255,.7); max-width:350px; padding:15px 20px; position:relative}
+	h2{ font-size:$s26}
+	.inner{ max-width:240px}
+	h3{ @include font($openbold, $s14, $grey, 1.3); margin:0}
+	.field-name-field-link{ @include font($opensemibold, $s12, $grey, 1.3); position:absolute; bottom:20px;
+		a{ text-decoration:none; max-width:240px; display:block}
+		a:after{ content:'\003e'; padding-left:5px}
+	}
+}
+
+
+/* HOMEPAGE PROMO
+----------------------------------*/
+.node-homepage-promo{ background:#fff;
+	.text{ float:left; width:60%; padding:15px}
+	.field-name-field-image{ float:right; width:40%}
+	h6{ margin:0}
+	.field-name-body ul,
+	.field-name-body p{ @include smalltext}
+	.field-name-field-link a{ text-decoration:none; font-family:$openbold; font-size:$s11;
+		&:after{ content:'\00a0\003e'}
+	}
+	ul{ margin-left:15px}
+	ul li{ padding-left:0}
+	.price-label{ top:auto; bottom:30px}
+	.price-footnote{ position:absolute; bottom:10px; left:15px; max-width:60%; }
+}
+
+
+/* WEBFORM
+----------------------------------*/
+.node-webform form{ margin-top:40px;
+	#webform-component-header{ float:right; width:40%; padding-left:30px;
+		h3{font-size:$s14; margin:0 0 10px 0}
+		p{ margin-bottom:10px; @include smalltext}
+		strong{ font-family:$droidbold}
+	}
+	.form-item{ margin-bottom:15px}
+	.form-item.webform-component-textfield,
+	.form-item.webform-component-textarea,
+	.form-item.webform-component-email{ float:left; width:60%}
+}
+
+
+
+/* ---------------------------------------------------------------- */
+/* VIEWS
+/* ---------------------------------------------------------------- */
+
+/* GLOBAL VIEW STYLES
+----------------------------------*/
+.views-row{ position:relative; }
+.views-field-edit-node a{ position:absolute; right:1px; top:1px; font-size:$s11; text-transform:uppercase; display:inline-block; padding:2px 5px; text-decoration:none; z-index:2; line-height:1; color:#fff; background:rgba(0,0,0,.7); display:inline; height:auto }
+.views-field-edit-node a:hover{ opacity:0.6}
+.views-table.draggable{ width:100%}
+div[id*="-order"]{ margin-top:40px; border-top:1px solid $grey;
+	h2{ margin:20px 0 0; }
+	#edit-actions{ margin-top:20px}
+}
+
+
+/* HOMEPAGE PROMOS
+----------------------------------*/
+.view-homepage-promos{ margin:20px 0;
+	.views-row{ float:left; width:33.333%;}
+	.views-row-1{ padding-right:18px}
+	.views-row-2{ padding:0 9px}
+	.views-row-3{ padding-left:18px}
+	h2, h2 a{ color:$green}
+}
+
+
+/* TAXONOMY EXTERIOR DOORS
+----------------------------------*/
+.view-taxonomy-exterior-doors{
+	.views-row{ margin-top:40px}
+	.text{ float:right; width:70%; padding-left:20px;}
+	.image{ float:left; width:30%; }
+	h2{ font-size:$s20; position:relative; padding-left:12px}
+	h2 a:before{ @include arrow($green,0)}
+	.description{ @include smalltext; margin:15px 0}
+}
+
+
+/* DOORS
+----------------------------------*/
+.view-doors{
+	.views-row{ float:left; margin:0 25px 25px 0}
+}
+
+
+/* INTERIOR DOORS
+----------------------------------*/
+.view-interior-doors { padding-top:30px;
+	.views-row:not(.views-row-1) .price-label{ display:none}
+	.price-label{ top:37%}
+	h2{ margin:0 0 20px}
+	h3{ margin:0 0 30px; font-size:$s14; border-bottom:1px solid $grey; padding:0 0 8px 25px; position:relative; cursor:pointer;
+		@include fonticon('\e600', 13px);
+		&:before{ background:$grey; width:11px; height:11px; line-height:11px; padding:2px;}
+		&.plus:before{ content:"\e601";}
+		&:hover:before{ background:$darkgrey}
+	}
+}
+
+
+/* DOOR HARDWARE
+----------------------------------*/
+.views-door-hardware{ padding-top:40px;
+	h2{ border-bottom:1px solid $grey; margin:0 0 30px; padding-bottom:10px}
+	.description{ font-size:$s11; margin:0 120px 25px 0; line-height:1.5;
+		h6{ margin:0}
+	}
+	.price-label{ right:30px}
+	.views-row{ float:left; margin-bottom:50px; width:100% }
+	> .views-row{ margin:0; float:none}
+}
+#handle-sets .views-row{ width:33.333%}
+#level-handles .views-row{ width:50%;
+	&.views-row-odd .node{ padding-right:20px}
+	&.views-row-even .node{ padding-left:20px}
+}
+
+#level-handles .price-label{ top:60px}
+#ball-knobs .price-label{ top:110px}
+#deadbolts .price-label{ top:135px}
+
+
+/* ---------------------------------------------------------------- */
 /* BLOCKS
-/* -------------------------------------------- */
+/* ---------------------------------------------------------------- */
 
-#sidebar-left{
+/* HOME PAGE
+----------------------------------*/
+#block-views-homepage-banner-block{ float:left; width:77%}
+#homepage-right{ float:right; width:21%; min-height:380px; background:$darkgrey;
 	.block{ padding:15px 20px;}
+	h2{ margin-bottom:10px; color:$green}
+}
+
+#block-block-11,
+.front #testimonial{ float:left; width:50%;
+	> .inner{ background:#fff; padding:15px}
+	h2.block-title{ margin-bottom:10px}
+}
+
+#block-block-11{ padding-right:10px;
+	.block-content{ @include smalltext;
+		p:not(:last-of-type){ margin-bottom:5px}
+		a{ text-decoration:none; font-family:$openbold}
+	}
+}
+
+.front #testimonial{ padding:0 0 0 10px;
+	#reviews{ border-top:none; border-bottom:1px solid #e6e6e6; padding:0 0 3px; margin:-15px 0 0; float:right }
+}
+
+
+/* SERVICE AREAS
+----------------------------------*/
+#block-block-13{
+	.block-content{ @include smalltext;
+		ul{ @include reset; float:left;
+			li{ @include reset}
+			&:first-of-type{ margin-right:55px}
+		}
+	}
+}
+
+
+/* SIDEBAR LEFT
+----------------------------------*/
+#sidebar-left{
+	.block:not(#block-views-testimonials-block){ padding:15px 20px;}
 	h2{ margin-bottom:10px}
 }
 
@@ -161,8 +403,11 @@ img{ vertical-align:middle; max-width:100%; height:auto !important}
 	a:hover{ color:#fff}
 }
 
-#view-gallery{ margin-top:20px; background:$grey}
+#view-gallery{ margin:20px 0; background:$grey}
 
+
+/* SIDEBAR RIGHT
+----------------------------------*/
 #reviews{ border-top:1px solid #e6e6e6; text-align:right; margin:30px -5px 0 -5px; padding-top:5px;
 	span{ font-size:10px; display:inline-block; line-height:1}
 	span:first-of-type{ padding:0 5px 0 0; border-right:1px solid #e6e6e6; margin-right:5px;position:relative; top:5px}
@@ -170,6 +415,17 @@ img{ vertical-align:middle; max-width:100%; height:auto !important}
 	a:hover{ text-decoration:underline}
 }
 
+// Service Areas Map
+#block-block-12{ margin-top:65px;
+	h2{ color:$grey}
+	.block-content{ @include smalltext}
+	p{ margin-bottom:10px}
+	strong{}
+}
+
+
+/* DOOR SPECS
+----------------------------------*/
 .door-specs{ margin-top:40px;
 	h2{ font-size:$s14; border-bottom:1px solid $grey; padding:0 0 8px 25px; margin:0; position:relative; cursor:pointer;
 		@include fonticon('\e600', 13px);
@@ -177,7 +433,7 @@ img{ vertical-align:middle; max-width:100%; height:auto !important}
 		&.plus:before{ content:"\e601";}
 		&:hover:before{ background:$darkgrey}
 	}
-	p{ font-size:$s11; line-height:1.2}
+	p{ @include smalltext}
 }
 
 // Door Configurations
@@ -220,111 +476,24 @@ img{ vertical-align:middle; max-width:100%; height:auto !important}
 }
 
 
-/* -------------------------------------------- */
-/* CONTENT TYPES
-/* -------------------------------------------- */
-
-.node{ position:relative}
-
-/* PAGE
-----------------------------------*/
-#page-image{ margin-bottom:20px}
-#intro,
-.node-page .field-name-body{ font-family:$openbold; font-size:$s14; line-height:1.5}
-
-/* TESTIMONIAL
-----------------------------------*/
-#testimonial{ background:$light; padding:15px;
-	p{ font-family:$opensemibolditalic; line-height:1.3; margin-bottom:0}
-	footer{ font-family:$droidbold}
-	.quote{ @include font($crete, 2em, $green, 0.6); position:relative; top:.2.4em}
-}
-
-/* DOORS
-----------------------------------*/
-.node-door{ line-height:1.5;
-	.details{ font-size:$s11; margin:0}
-	.price{ font-size:$s14}
-	h6{ text-transform:inherit; margin-bottom:0}
-}
-
-/* HARDWARE
-----------------------------------*/
-.node-door-hardware{ line-height:1.5;
-	h6{ text-transform:inherit; margin-bottom:0}
-	.details{ font-size:$s11; margin:0;
-		ul{ margin:5px 0 5px 10px; }
-		li{ margin:0; padding:0;  }
-	}
-}
 
 
-/* -------------------------------------------- */
-/* VIEWS
-/* -------------------------------------------- */
-
-/* GLOBAL VIEW STYLES
-----------------------------------*/
-.views-row{ position:relative; }
-.views-field-edit-node a{ position:absolute; right:1px; top:1px; font-size:$s11; text-transform:uppercase; display:inline-block; padding:2px 5px; text-decoration:none; z-index:2; line-height:1; color:#fff; background:rgba(0,0,0,.7); display:inline; height:auto }
-.views-field-edit-node a:hover{ opacity:0.6}
-.views-table.draggable{ width:100%}
-div[id*="-order"]{ margin-top:40px; border-top:1px solid $grey;
-	h2{ margin:20px 0 0; }
-	#edit-actions{ margin-top:20px}
-}
-
-/* PRICE LABEL */
-.views-row:not(.views-row-1) .price-label{ display:none}
-.price-label{ background:#63aa52; color:$light; font-size:.75em; line-height:1; padding:3px 12px 3px 3px;text-transform:uppercase; position:absolute; right:-5px; top:37%; z-index:9;
-	span{ font-size:1.4em; font-weight:bold; display:block; padding-top:2px}
-	&:after{ position:absolute; content:''; font-size: 0px; line-height: 0%; width: 0px; border-top: 5px solid #b1d4a8; border-right: 5px solid #fff; bottom:-5px; right:0}
-}
 
 
-/* TAXONOMY EXTERIOR DOORS
-----------------------------------*/
-.view-taxonomy-exterior-doors{
-	.views-row{ margin-top:40px}
-	.text{ float:right; width:70%; padding-left:20px;}
-	.image{ float:left; width:30%; }
-	h2{ font-size:$s20; position:relative; padding-left:12px}
-	h2 a:before{ @include arrow($green,0)}
-	.description{ font-size:$s11; line-height:1.3; margin:15px 0}
-}
 
 
-/* DOORS
-----------------------------------*/
-.view-doors{
-	.views-row{ float:left; margin:0 25px 25px 0}
-}
-
-/* INTERIOR DOORS
-----------------------------------*/
-.view-interior-doors { padding-top:30px;
-	h2{ margin:0 0 20px}
-	h3{ margin:0 0 30px; font-size:$s14; border-bottom:1px solid $grey; padding:0 0 8px 25px; position:relative; cursor:pointer;
-		@include fonticon('\e600', 13px);
-		&:before{ background:$grey; width:11px; height:11px; line-height:11px; padding:2px;}
-		&.plus:before{ content:"\e601";}
-		&:hover:before{ background:$darkgrey}
-	}
-}
-
-/* DOOR HARDWARE
-----------------------------------*/
-.views-door-hardware{ padding-top:40px;
-	h2{ border-bottom:1px solid $grey; margin:0 0 30px; padding-bottom:10px}
-	.views-row{ float:left; margin-bottom:50px }
-}
-#handle-sets .views-row{ width:33.333%}
-#level-handles .views-row{ width:50%; }
 
 
-/* -------------------------------------------- */
+
+
+
+
+
+
+
+/* ---------------------------------------------------------------- */
 /* DRUPAL OVERRIDES
-/* -------------------------------------------- */
+/* ---------------------------------------------------------------- */
 div.messages{ font-size:1em}
 div.messages p,
 div.messages ul{ font-size:1em}

@@ -8,7 +8,7 @@
  */
  
 ?>
-
+<div id="page-wrap">
 <div id="page" class="width">
 
   <header class="header clearfix" id="header" role="banner">
@@ -46,6 +46,21 @@
 	  	if(isset($node)){
 			switch($node->nid){
 				
+				// Home Page
+				case 1:
+					print '<div class="clearfix">';
+						print doorsgalore_block_render('views', 'homepage_banner-block');
+						print '<div id="homepage-right">';
+							include 'include/include--find-a-door.php';
+							include 'include/include--need-help.php';
+						print '</div>';
+					print '</div>';
+					print doorsgalore_block_render('views', 'homepage_promos-block');
+					print doorsgalore_block_render('views', 'homepage_promos-order');
+					print doorsgalore_block_render('block', 11);
+					include 'include/include--testimonial.php';
+				break;
+				
 				// Exterior Doors Taxonomy
 				case 7:
 					print doorsgalore_block_render('views', 'taxonomy_exterior_doors-block');
@@ -70,18 +85,27 @@
 				break;
 				
 				// Hardware List
-				case 37:
+				case 37:		
 					print '<div class="views-door-hardware">';
 					$hardware = taxonomy_terms_by_name('door_hardware');
 					foreach( $hardware as &$t){
 						$term = taxonomy_term_load($t->tid);
 						$id = strtolower(str_replace(' ','-',$term->name));
-						print '<div id="'.$id.'">';
 						print '<h2>'.$term->name.'</h2>';
+						print '<div id="'.$id.'" class="views-row">';
+						// pritn term description
+						if($term->description != '') print '<div class="description inline-list">'.$term->description.'</div>';
+						// print term price label
+						if(isset($term->field_price['und'])) doorsgalore_price_label($term->field_price['und'][0]['value']);
 						print views_embed_view('door_hardware', 'block' , $t->tid);
 						print '</div>';
 					}
 					print '</div>';
+				break;
+				
+				// Service Areas
+				case 55:
+					print doorsgalore_block_render('block', 13);
 				break;
 				
 			}
@@ -97,13 +121,39 @@
         
         <!-- if(arg(0) == 'faqs' || request_uri() == '/node/add/faq')-->
         
-        	<?php include_once 'include/include--find-a-door.php'; ?>
-            <?php include_once 'include/include--need-help.php'; ?>
+        	<?php include 'include/include--find-a-door.php'; ?>
+            <?php include 'include/include--need-help.php'; ?>
+            <?php include 'include/include--view-gallery.php'; ?>
+            
+            <?php
+			
+			if(isset($node)){
+				switch($node->nid){
+					case 54:
+						include 'include/include--testimonial.php';
+					break;
+				}
+			}
+			
+			?>
+            
 		</div>
         
 		<div id="sidebar-right" class="sidebar">
-        	<?php include_once 'include/include--page-image.php'; ?>
-			<?php include_once 'include/include--testimonial.php'; ?>
+			<?php 
+			if(isset($node) && $node->nid != 54) 
+				include 'include/include--testimonial.php'; 
+				include 'include/include--page-image.php';
+
+            if(isset($node))
+				switch($node->nid){
+					case 54:
+						print doorsgalore_block_render('block', 12);
+					break;
+				}
+			
+			?>
+            
 		</div>
         
 	</aside>
@@ -113,5 +163,7 @@
   </div>
 
 </div>
+
+</div> <!-- /#page-wrap -->
 
 <?php include_once 'include/include--footer.php'; ?>

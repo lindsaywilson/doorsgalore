@@ -14,7 +14,7 @@
   	include 'include/include--node-edit.php';
     print render($content['field_image']);
 	print '<h6>'.$title.'</h6>';
-	print '<div class="details">'.$node->body['und'][0]['value'].'</div>';
+	print '<div class="details inline-list">'.$node->body['und'][0]['value'].'</div>';
   ?>
 
 
