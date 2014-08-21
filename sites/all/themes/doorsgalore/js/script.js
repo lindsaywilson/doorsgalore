@@ -45,6 +45,9 @@
 			});
 		}
 		
+		// Match Heights (responsive)
+		$('.view-doors .rows .views-row').matchHeight(true);
+		
         // Doors views items
 		$('.view-doors .views-row').each( function(){
 			w = $(this).find('img').width();

@@ -2,6 +2,7 @@
   switch($view->name){
   	case 'exterior_doors':
 	case 'interior_doors':
+	case 'clearance_items':
 		$classes .= ' view-doors';
 		break;
   }

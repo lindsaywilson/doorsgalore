@@ -173,7 +173,7 @@ $indent-amount: 30px;
 /*
  * Icon Fonts
  */ 
-@mixin fonticon ($content, $size:24px, $color: #FFFFFF) {
+@mixin fonticon ($content, $size:24px, $color: $grey) {
     
     &:before {
         position: absolute;

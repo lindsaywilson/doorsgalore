@@ -108,6 +108,23 @@
 					print doorsgalore_block_render('block', 13);
 				break;
 				
+				// Clearance
+				case 56:
+					print doorsgalore_block_render('views', 'clearance_items-block');
+					print doorsgalore_block_render('views', 'clearance_items-order');
+				break;
+				
+				// Promotions
+				case 60:
+					print doorsgalore_block_render('views', 'promotions-block');
+				break;
+				
+				// Gallery
+				case 63:
+					$gallery = node_view(node_load(64));
+					print drupal_render($gallery);
+				break;
+				
 			}
 		}
 	  ?>
@@ -141,10 +158,11 @@
         
 		<div id="sidebar-right" class="sidebar">
 			<?php 
+			
 			if(isset($node) && $node->nid != 54) 
-				include 'include/include--testimonial.php'; 
 				include 'include/include--page-image.php';
-
+				include 'include/include--testimonial.php'; 
+				
             if(isset($node))
 				switch($node->nid){
 					case 54:

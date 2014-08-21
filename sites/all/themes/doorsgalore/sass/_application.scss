@@ -166,12 +166,21 @@ img{ vertical-align:middle; max-width:100%; height:auto !important}
 }
 .price-footnote{ font-size:9px; line-height:1}
 
+.field-name-field-file{ margin-top:10px;
+	img{ display:none}
+	a{ font-family:$openbold; text-decoration:none; padding-left:30px; display:block; position:relative; @include fonticon('\e600', 22px); 
+		&:before{ top:-3px}
+		&:hover:before{ color:#000}
+	}
+}
+
 #map-canvas{ height:260px; margin:20px 0}
 
 
 /* PAGE
 ----------------------------------*/
 #page-image{ margin-bottom:20px}
+.node-page{ margin-bottom:40px}
 #intro,
 .node-page .field-name-body,
 .node-webform .field-name-body{ font-family:$openbold; font-size:$s15; line-height:1.5}
@@ -192,6 +201,20 @@ img{ vertical-align:middle; max-width:100%; height:auto !important}
 	.details{ font-size:$s11; margin:0}
 	.price{ font-size:$s14}
 	h6{ text-transform:inherit; margin-bottom:0}
+}
+
+
+/* CLEARANCE ITEM
+----------------------------------*/
+.node-clearance-items{ 
+	.price-label{ top:37%}
+}
+
+
+/* PROMOTION
+----------------------------------*/
+.node-promotion{ margin-bottom:30px;
+	h2{ margin-bottom:10px}
 }
 
 
@@ -281,7 +304,7 @@ div[id*="-order"]{ margin-top:40px; border-top:1px solid $grey;
 /* TAXONOMY EXTERIOR DOORS
 ----------------------------------*/
 .view-taxonomy-exterior-doors{
-	.views-row{ margin-top:40px}
+	.views-row:not(.views-row-last){ margin-bottom:40px}
 	.text{ float:right; width:70%; padding-left:20px;}
 	.image{ float:left; width:30%; }
 	h2{ font-size:$s20; position:relative; padding-left:12px}
@@ -299,14 +322,14 @@ div[id*="-order"]{ margin-top:40px; border-top:1px solid $grey;
 
 /* INTERIOR DOORS
 ----------------------------------*/
-.view-interior-doors { padding-top:30px;
+.view-interior-doors { 
 	.views-row:not(.views-row-1) .price-label{ display:none}
 	.price-label{ top:37%}
 	h2{ margin:0 0 20px}
 	h3{ margin:0 0 30px; font-size:$s14; border-bottom:1px solid $grey; padding:0 0 8px 25px; position:relative; cursor:pointer;
-		@include fonticon('\e600', 13px);
+		@include fonticon('\e601', 13px);
 		&:before{ background:$grey; width:11px; height:11px; line-height:11px; padding:2px;}
-		&.plus:before{ content:"\e601";}
+		&.plus:before{ content:"\e602";}
 		&:hover:before{ background:$darkgrey}
 	}
 }
@@ -314,7 +337,7 @@ div[id*="-order"]{ margin-top:40px; border-top:1px solid $grey;
 
 /* DOOR HARDWARE
 ----------------------------------*/
-.views-door-hardware{ padding-top:40px;
+.views-door-hardware{ 
 	h2{ border-bottom:1px solid $grey; margin:0 0 30px; padding-bottom:10px}
 	.description{ font-size:$s11; margin:0 120px 25px 0; line-height:1.5;
 		h6{ margin:0}
@@ -332,6 +355,7 @@ div[id*="-order"]{ margin-top:40px; border-top:1px solid $grey;
 #level-handles .price-label{ top:60px}
 #ball-knobs .price-label{ top:110px}
 #deadbolts .price-label{ top:135px}
+
 
 
 /* ---------------------------------------------------------------- */
@@ -428,9 +452,9 @@ div[id*="-order"]{ margin-top:40px; border-top:1px solid $grey;
 ----------------------------------*/
 .door-specs{ margin-top:40px;
 	h2{ font-size:$s14; border-bottom:1px solid $grey; padding:0 0 8px 25px; margin:0; position:relative; cursor:pointer;
-		@include fonticon('\e600', 13px);
+		@include fonticon('\e601', 13px);
 		&:before{ background:$grey; width:11px; height:11px; line-height:11px; padding:2px;}
-		&.plus:before{ content:"\e601";}
+		&.plus:before{ content:"\e602";}
 		&:hover:before{ background:$darkgrey}
 	}
 	p{ @include smalltext}
@@ -476,13 +500,11 @@ div[id*="-order"]{ margin-top:40px; border-top:1px solid $grey;
 }
 
 
+/* ---------------------------------------------------------------- */
+/* IMAGE LIGHTBOX
+/* ---------------------------------------------------------------- */
 
-
-
-
-
-
-
+#imagelightbox{ position: fixed; z-index: 9999; -ms-touch-action: none; touch-action: none;}
 
 
 
