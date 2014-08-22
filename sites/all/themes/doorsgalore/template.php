@@ -36,7 +36,22 @@ function doorsgalore_preprocess_maintenance_page(&$variables, $hook) {
  */
 
 function doorsgalore_preprocess_html(&$variables, $hook) {
+	
+    if (arg(0) == 'node' && is_numeric(arg(1))){
 
+        switch (arg(1)):
+
+            case 63 :
+			case 64 : // Gallery page/node
+				drupal_add_css(libraries_get_path('jquery.magnific-popup').'/magnific-popup.css');
+				drupal_add_js(libraries_get_path('jquery.magnific-popup').'/jquery.magnific-popup.min.js', array('weight' => 10, 'scope' => 'footer')); 
+			break; 
+
+        endswitch;
+
+    }
+	
+	
 	drupal_add_js(path_to_theme().'/js/mobile-scroll.js', array('weight' => 10, 'scope' => 'footer') );
 	drupal_add_js(path_to_theme().'/js/retina-1.1.0.js', array('weight' => 10, 'scope' => 'footer') );
 	drupal_add_js(path_to_theme().'/js/jquery.waitforimages.min.js', array('weight' => 10, 'scope' => 'footer') );

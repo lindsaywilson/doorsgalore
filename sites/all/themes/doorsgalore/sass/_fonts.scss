@@ -187,11 +187,11 @@
 
 @font-face {
 	font-family: 'icomoon';
-	src:url('fonts/icomoon.eot?oxc4d5');
-	src:url('fonts/icomoon.eot?#iefixoxc4d5') format('embedded-opentype'),
-		url('fonts/icomoon.woff?oxc4d5') format('woff'),
-		url('fonts/icomoon.ttf?oxc4d5') format('truetype'),
-		url('fonts/icomoon.svg?oxc4d5#icomoon') format('svg');
+	src:url('fonts/icomoon.eot?5euxob');
+	src:url('fonts/icomoon.eot?#iefix5euxob') format('embedded-opentype'),
+		url('fonts/icomoon.woff?5euxob') format('woff'),
+		url('fonts/icomoon.ttf?5euxob') format('truetype'),
+		url('fonts/icomoon.svg?5euxob#icomoon') format('svg');
 	font-weight: normal;
 	font-style: normal;
 }
@@ -218,6 +218,12 @@
 }
 .icon-pdf:before {
 	content: "\e600";
+}
+.icon-arrow-left:before {
+	content: "\f060";
+}
+.icon-arrow-right:before {
+	content: "\f061";
 }
 .icon-calculator:before {
 	content: "\e603";

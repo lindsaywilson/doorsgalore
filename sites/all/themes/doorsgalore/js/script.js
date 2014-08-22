@@ -31,6 +31,18 @@
 			resizeTimer = setTimeout(function() { LAYOUT.timerResize(); }, 100);
 		});
 		
+		// Magnific Popup
+		if($('body').hasClass('page-node-63') || $('body').hasClass('page-node-64') ){
+			$('a.magnific').magnificPopup({
+				type: 'image',
+				removalDelay: 300,
+				mainClass: 'mfp-fade',
+				gallery:{
+					enabled:true
+				}
+			});
+		}
+		
 		
 		// Equal heights
 		if(!window.isMobile){
@@ -47,6 +59,8 @@
 		
 		// Match Heights (responsive)
 		$('.view-doors .rows .views-row').matchHeight(true);
+		$('.view-homepage-promos .node-homepage-promo').matchHeight();
+		$('#block-block-3 .grid').matchHeight(true);
 		
         // Doors views items
 		$('.view-doors .views-row').each( function(){

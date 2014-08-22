@@ -21,4 +21,11 @@
 .grid{ float:left}
 .grid-half{ width:50%}
 .grid-third{ width:33.333%}
-.grid-quarter{ width:25%} 
+.grid-quarter{ width:25%}
+
+.layout{
+	.grid{ margin-bottom:21px}
+	.grid-third:nth-child(3n-2){ padding-right:14px}
+	.grid-third:nth-child(3n-1){ padding:0 7px}
+	.grid-third:nth-child(3n){ padding-left:14px}
+}

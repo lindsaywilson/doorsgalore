@@ -10,17 +10,20 @@
 ?>
 <article class="node-<?php print $node->nid; ?> <?php print $classes; ?> clearfix"<?php print $attributes; ?>>
 
-  <?php 
-  	include 'include/include--node-edit.php';
-	
+  <?php  include 'include/include--node-edit.php'; ?>
+  
+  
+  <div class="gallery-images layout">
+  <?php	
 	foreach($node->field_images['und'] as $img){
 		$thumb = image_style_url('gallery-thumb', $img['uri']);
-		$full = file_create_url($img['uri']);
+		$full = image_style_url('large', $img['uri']);
 		$title = $img['title'];
-		print '<a class="grid grid-third" href="'.$full.'" title="'.$title.'"><img src="'.$thumb.'" /></a>';
+		print '<a class="grid grid-third magnific" href="'.$full.'" title="'.$title.'"><img src="'.$thumb.'" /></a>';
 	}
 	
   ?>
+  </div>
 
 
 </article>

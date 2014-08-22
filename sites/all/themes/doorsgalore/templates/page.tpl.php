@@ -21,7 +21,9 @@
     </div>
     
     <div id="nav">
-		<?php print doorsgalore_block_render('menu_block', 1); ?>
+    	<div id="main-nav">
+			<?php print doorsgalore_block_render('menu_block', 1); ?>
+        </div>
         <div id="header-nav"><?php print doorsgalore_block_render('menu_block', 3); ?></div>
     </div>
 
@@ -29,7 +31,7 @@
 
   <div id="main" class="clearfix">
 
-    <div id="content" class="column" role="main">
+    <div id="content" class="column clearfix" role="main">
       <a id="main-content"></a>
       <?php print $messages; ?>
       <?php if(!$is_front) print render($tabs); ?>
@@ -50,7 +52,7 @@
 				case 1:
 					print '<div class="clearfix">';
 						print doorsgalore_block_render('views', 'homepage_banner-block');
-						print '<div id="homepage-right">';
+						print '<div id="homepage-right" class="clearfix">';
 							include 'include/include--find-a-door.php';
 							include 'include/include--need-help.php';
 						print '</div>';

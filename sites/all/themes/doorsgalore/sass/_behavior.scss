@@ -1,48 +1,44 @@
 
-/* ------------------------------ */
-/* DESKTOP LARGE
-/* ------------------------------ */
-
-@media (max-width: 1600px) {
-
-/* MAIN LAYOUT 
-/* ------------------------------ */
-
-/* HTML
-/* ------------------------------ */
-
-/* PAGE ELEMENTS
-/* ------------------------------ */
-
-/* CONTENT TYPES
-/* ------------------------------ */
-
-/* VIEWS
-/* ------------------------------ */
-
-}
-
 
 /* ------------------------------ */
 /* TABLET
 /* ------------------------------ */
 
-@media (max-width: 1024px) {
+@media (max-width: 800px) {
 
-/* MAIN LAYOUT 
-/* ------------------------------ */
 
-/* HTML
-/* ------------------------------ */
+	/* MAIN LAYOUT 
+	/* ------------------------------ */
+	.width{ padding:0 20px}
+	.not-front #page{ padding-bottom:0}
+	.not-front #content{ width:75%; margin-left:25%; margin-right:-100%; margin-bottom:30px}
+	.not-front #sidebar-left{ width:25%; margin-right:-25%}
+	.not-front #sidebar-right{ float:none; width:auto; margin:0 -20px; clear:both}
+	
+	#nav #main-nav ul li a{ padding:0 8px}
+	
+	#page-image{ display:none}
+	#testimonial .inner{ margin:0 auto; max-width:500px}
+	#reviews { border-top:none;  margin-top:0; }
+	
+	#buckets{  padding:20px 0;
+		.grid p{ padding:0 20px}
+	}
+	.not-front #buckets{ border-top: 1px solid #bbb7b5;}
+	
+	#footer{
+		.nav,
+		#footer-right{ float:none; width:auto}
+		#footer-right{ margin-top:20px; position:relative}
+		#copyright{ position:static; margin-top:20px}
+	}
+	
+	#block-views-homepage-banner-block{ float:none; width:auto}
+	#homepage-right{ float:none; width:auto; margin-top:20px; min-height:inherit}
+	#homepage-right .block{ float:left; width:50%}
+	#homepage-right .block .cell{ float:left; width:50%}
+	.front #find-a-door p{ margin-top:0}
 
-/* PAGE ELEMENTS
-/* ------------------------------ */
-
-/* CONTENT TYPES
-/* ------------------------------ */
-
-/* VIEWS
-/* ------------------------------ */
 
 }
 
@@ -51,30 +47,66 @@
 /* MOBILE
 /* ------------------------------ */
 
-@media (max-width: 740px) {
+@media (max-width: 600px) {
+
+
+	.width{ padding:0}
+	#sidebar-left{ display:none}
+	.not-front #sidebar-right{ margin:0}
+	.not-front #content{ float:none; margin-left:0; margin-right:0; padding:0; width:auto}
 	
-/* MAIN LAYOUT 
-/* ------------------------------ */
+	#logo{ display:block; text-align:center}
+	
+	.not-front #content,
+	#testimonial,
+	#footer{ padding-left:20px; padding-right:20px}
+	
+	#header-blocks,
+	#buckets{ display:none}
+	#footer{
+		.nav{ display:none}
+		#footer-right{ margin-top:0}
+		#footer-right .images{ right:0;
+			img:last-of-type{ display:none}
+		}
+	}
+	
+	#testimonial .inner{ max-width:none}
+	#reviews{ margin:0}
 
-/* HTML
-/* ------------------------------ */
-
-/* PAGE ELEMENTS
-/* ------------------------------ */
-
-/* CONTENT TYPES
-/* ------------------------------ */
-
-/* VIEWS
-/* ------------------------------ */
 
 }
 
 
 @media (max-width: 480px) {
 
+	#block-block-3 .grid{ width:50%; padding:0 5px}
+	#block-block-4 img{ margin-bottom:8px}
+	#block-block-7 img{ margin-bottom:30px}
+	
+	.views-door-hardware .description{ margin-right:0; padding-top:20px}
+	#deadbolts .price-label,
+	#ball-knobs .price-label,
+	#level-handles .price-label,
+	.views-door-hardware .price-label{ top:-20px; right:0}
+
+}
 
 
+@media (max-width: 320px) {
+
+	.grid-half,
+	.grid-third,
+	.grid-quarter{ width:50%; }
+	
+	.layout{
+		.grid{ margin-bottom:20px}
+		.grid-third:nth-child(odd){ padding:0 10px 0 0}
+		.grid-third:nth-child(even){ padding:0 0 0 10px}
+	}
+	
+	.gallery-images .grid{ display:block; text-align:center}
+	
 }
 
 
