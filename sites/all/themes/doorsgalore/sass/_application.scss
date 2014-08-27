@@ -71,7 +71,8 @@
 /* NAV
 /* ---------------------------------------------------------------- */
 
-#nav{ background:$grey;
+#mobile-nav-btn{ display:none;}
+#nav{ background:$grey; display:block;
 	ul{ @include reset; text-align:center;
 		li{ @include reset; display:inline-block; padding:8px 0;
 			&:last-child a{ border-right:none;}
@@ -231,7 +232,7 @@ img{ vertical-align:middle; max-width:100%; height:auto !important}
 /* HOMEPAGE BANNER
 ----------------------------------*/
 .node-homepage-banner{ height:380px; background-size:cover; background-position:right 0; padding:45px;
-	.text{ height:100%; background:#fff; background:rgba(255,255,255,.7); max-width:350px; padding:15px 20px; position:relative}
+	.text{ height:100%; background:#fff; background:rgba(255,255,255,.7); max-width:400px; padding:15px 20px; position:relative}
 	h2{ font-size:$s26}
 	.inner{ max-width:240px}
 	h3{ @include font($openbold, $s14, $grey, 1.3); margin:0}
@@ -244,12 +245,14 @@ img{ vertical-align:middle; max-width:100%; height:auto !important}
 
 /* HOMEPAGE PROMO
 ----------------------------------*/
-.node-homepage-promo{ background:#fff;
+.node-homepage-promo{ background:#fff; 
 	.text{ float:left; width:60%; padding:15px}
 	.field-name-field-image{ float:right; width:40%}
 	h6{ margin:0}
-	.field-name-body ul,
-	.field-name-body p{ @include smalltext}
+	.field-name-body{ padding-bottom:30px;
+		ul,
+		p{ @include smalltext}
+	}
 	.field-name-field-link a{ text-decoration:none; font-family:$openbold; font-size:$s11;
 		&:after{ content:'\00a0\003e'}
 	}
@@ -263,7 +266,7 @@ img{ vertical-align:middle; max-width:100%; height:auto !important}
 /* WEBFORM
 ----------------------------------*/
 .node-webform form{ margin-top:40px;
-	#webform-component-header{ float:right; width:40%; padding-left:30px;
+	#webform-component-header{ float:right; width:40%; padding-left:30px; @extend .clearfix;
 		h3{font-size:$s14; margin:0 0 10px 0}
 		p{ margin-bottom:10px; @include smalltext}
 		strong{ font-family:$droidbold}

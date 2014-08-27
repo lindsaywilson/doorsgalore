@@ -20,6 +20,9 @@
 		<div class="info-block visit-showroom"><?php print doorsgalore_block_render('block', 2); ?></div>
     </div>
     
+    <div id="mobile-nav-btn">
+		<a href="#" class="open_nav"></a>
+	</div>
     <div id="nav">
     	<div id="main-nav">
 			<?php print doorsgalore_block_render('menu_block', 1); ?>
@@ -161,16 +164,18 @@
 		<div id="sidebar-right" class="sidebar">
 			<?php 
 			
-			if(isset($node) && $node->nid != 54) 
+			if(isset($node) && $node->nid != 54){
 				include 'include/include--page-image.php';
 				include 'include/include--testimonial.php'; 
-				
-            if(isset($node))
+			}
+			
+            if(isset($node)){
 				switch($node->nid){
 					case 54:
 						print doorsgalore_block_render('block', 12);
 					break;
 				}
+			}
 			
 			?>
             

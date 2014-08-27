@@ -11,11 +11,33 @@
 	/* ------------------------------ */
 	.width{ padding:0 20px}
 	.not-front #page{ padding-bottom:0}
+	.not-front #main{ border-top:2px solid $grey}
 	.not-front #content{ width:75%; margin-left:25%; margin-right:-100%; margin-bottom:30px}
 	.not-front #sidebar-left{ width:25%; margin-right:-25%}
 	.not-front #sidebar-right{ float:none; width:auto; margin:0 -20px; clear:both}
+	#header-blocks{ display:none}
 	
-	#nav #main-nav ul li a{ padding:0 8px}
+	#mobile-nav-btn{ display:block;
+		a{ display:block; text-decoration:none; position:absolute; right:0; top:63px; @include fonticon('\f0c9', 40px, $grey); margin-right:-5px}
+		a:before{ position:static}
+		a.close_nav:before{ content:'\f00d'; padding-right:3px}
+		a:hover:before{ color:$darkgrey}
+	}
+	#nav{ display:none; border-top:1px solid $cream;
+		#header-nav{ position:static; width:auto; background:$darkgrey }
+		ul,
+		#header-nav ul{
+			li{ display:block; padding:0; border:none; border-bottom:1px solid $cream;
+				a{ border:none; @include font($crete, $s16, $cream, 45px); padding:0}
+				a:hover{ color:#fff; text-decoration:none; background:$darkgrey}
+			}
+		}
+		#header-nav ul li{
+			&:first-child{ display:none;}
+			a:hover{ background:#282019}
+		}
+	}
+	
 	
 	#page-image{ display:none}
 	#testimonial .inner{ margin:0 auto; max-width:500px}
@@ -33,11 +55,34 @@
 		#copyright{ position:static; margin-top:20px}
 	}
 	
-	#block-views-homepage-banner-block{ float:none; width:auto}
-	#homepage-right{ float:none; width:auto; margin-top:20px; min-height:inherit}
-	#homepage-right .block{ float:left; width:50%}
-	#homepage-right .block .cell{ float:left; width:50%}
-	.front #find-a-door p{ margin-top:0}
+	
+	/* FRONT */
+	.front{
+		#block-views-homepage-banner-block{ float:none; width:auto}
+		#homepage-right{ float:none; width:auto; margin-top:20px; min-height:inherit}
+		#homepage-right .block{ float:left; width:50%}
+		#homepage-right .block .cell{ float:left; width:50%}
+		#find-a-door p{ margin-top:0}
+		#testimonial #reviews{ margin:0}
+		.view-homepage-promos{
+			.views-row{ float:none; width:auto; border:1px solid #f2f2f2;}
+			.views-row:not(.views-row-first){ margin-top:20px}
+			.views-row-1, .views-row-2, .views-row-3{ padding:0}
+			.field-name-field-image{ width:auto}
+		}
+	}
+	
+	/* CONTACT */
+	#sidebar-left #testimonial{ display:none}
+	#block-block-12{ padding:0 20px 40px}
+	.node-webform form{
+		#webform-component-header{ float:none; width:auto; padding:0;
+			p{ float:left; margin-right:40px}
+		}
+		.form-item.webform-component-textfield,
+		.form-item.webform-component-textarea,
+		.form-item.webform-component-email{ float:none; width:auto}
+	}
 
 
 }
@@ -55,13 +100,12 @@
 	.not-front #sidebar-right{ margin:0}
 	.not-front #content{ float:none; margin-left:0; margin-right:0; padding:0; width:auto}
 	
-	#logo{ display:block; text-align:center}
-	
 	.not-front #content,
 	#testimonial,
 	#footer{ padding-left:20px; padding-right:20px}
+	#logo{ padding-left:14px}
+	#mobile-nav-btn a{ right:8px}
 	
-	#header-blocks,
 	#buckets{ display:none}
 	#footer{
 		.nav{ display:none}
@@ -73,6 +117,17 @@
 	
 	#testimonial .inner{ max-width:none}
 	#reviews{ margin:0}
+	
+	
+	/* FRONT */
+	.front{
+		#main{ padding-bottom:20px}
+		.node-homepage-banner{ padding:20px}
+		#homepage-right .block{ float:none; width:100%}
+		#need-help{ display:none}
+		.price-label:after{ display:none}
+		.price-label{ right:0}
+	}
 
 
 }
@@ -89,6 +144,27 @@
 	#ball-knobs .price-label,
 	#level-handles .price-label,
 	.views-door-hardware .price-label{ top:-20px; right:0}
+	
+	/* FRONT */
+	.front{
+		.price-label{ margin:0; top:auto; bottom:20px}
+		.node-homepage-banner{
+			.field-name-field-link{ position:static; margin-top:20px}
+		}
+		.view-homepage-promos{
+			.field-name-field-image{ width:40%}
+		}
+		#block-block-11, 
+		#testimonial{ float:none; width:auto; padding:0}
+	}
+	
+	/* CONTACT */
+	.node-webform form{
+		#webform-component-header{ float:none; width:auto; padding:0;
+			p:first-of-type{ float:none;}
+			p{ margin-right:20px}
+		}
+	}
 
 }
 

@@ -51,7 +51,7 @@ function doorsgalore_preprocess_html(&$variables, $hook) {
 
     }
 	
-	
+	drupal_add_js(path_to_theme().'/js/jquery.easing.min.js', array('weight' => 10, 'scope' => 'footer') );
 	drupal_add_js(path_to_theme().'/js/mobile-scroll.js', array('weight' => 10, 'scope' => 'footer') );
 	drupal_add_js(path_to_theme().'/js/retina-1.1.0.js', array('weight' => 10, 'scope' => 'footer') );
 	drupal_add_js(path_to_theme().'/js/jquery.waitforimages.min.js', array('weight' => 10, 'scope' => 'footer') );

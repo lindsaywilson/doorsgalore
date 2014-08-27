@@ -31,6 +31,17 @@
 			resizeTimer = setTimeout(function() { LAYOUT.timerResize(); }, 100);
 		});
 		
+		$("#mobile-nav-btn").on( 'click', 'a', function(event){
+            event.preventDefault();
+            if( $(this).hasClass("open_nav") ){
+                $("#nav").slideDown(600, "easeOutExpo");
+                $(this).attr('class','close_nav');
+            }else{
+                $("#nav").slideUp(600, "easeOutExpo");
+                $(this).attr('class','open_nav');
+            }
+        });
+		
 		// Magnific Popup
 		if($('body').hasClass('page-node-63') || $('body').hasClass('page-node-64') ){
 			$('a.magnific').magnificPopup({
@@ -144,20 +155,13 @@
 
         if(!window.isMobile){
             MOBILE.showNav();
-            this.isPageReloaded = true;
-        }else{
-            if (this.isPageReloaded){
-
-            }
-            this.isPageReloaded = false;
         }
-
         
     };
 	
     LAYOUT.checkMobile = function (){
         // Define if on mobile (based on CCS media Queries : Device < 800px wide)
-        if ( $("#page-wrap").css("position") === 'relative') {
+        if ( $("#mobile-nav-btn").css("display") === 'block') {
             if( window.isMobile ){
                 window.deviceHasChanged = false;
             }else{
@@ -182,33 +186,24 @@
 	// ---------------------
 	
     var MOBILE = {};
-    MOBILE.toggleNav = function (button, nav){
-        var nextAction = button.attr("class");
-		if(button.parent().attr('id') == 'primary_nav_toggle'){
-			if(button.hasClass('open_nav')){
-				$('#navigation, .tertiary-menu, .block-locale').show();
-				$('#block-custom-search-blocks-1').hide();
-				$('#search_toggle a').attr('class','open_search');
-			}
-		}
+    MOBILE.toggleNav = function (){
+        var nextAction = $(this).attr("class");
+		var nav = $('#nav');
         if (nextAction === "open_nav"){
-            button.attr('class','close_nav');
-			nav.slideDown("fast");
+            $(this).attr('class','close_nav');
+			nav.slideDown(500, "easeOutExpo");
         }else{
-			button.attr('class','open_nav');
-            nav.slideUp("fast"); 
+			$(this).attr('class','open_nav');
+            nav.slideUp(500, "easeOutExpo"); 
         }
     };
-    MOBILE.showNav = function (button, nav){
-		$('#navigation, .header-menu, .block-locale, #block-custom-search-blocks-1').show();
-		$('#header .footer-menu').hide();
-        $('.mobile_toggle a').attr('class','close_nav');
-		$('.responsive_nav').slideDown("fast");
+    MOBILE.showNav = function (){
+		$('#nav').show();
+        $('#mobile-nav-btn a').attr('class','close_nav');
     };
-    MOBILE.hideNav = function (button, nav){
-		$('#header .footer-menu').show();
-		$('.mobile_toggle a').attr('class','open_nav');
-        $('.responsive_nav').slideUp("fast");
+    MOBILE.hideNav = function (){
+		$('#nav').hide();
+		$('#mobile-nav-btn a').attr('class','open_nav');
     };
 
 

@@ -5,7 +5,7 @@
 	$interior = taxonomy_terms_by_name('interior_doors');
 ?>
 
-<div id="find-a-door" class="block">
+<div id="find-a-door" class="clearfix block">
 	<h2>Find a Door:</h2>
     <div class="cell">
     <p><strong><a href="/exterior-doors">Exterior Doors</a></strong></p>
