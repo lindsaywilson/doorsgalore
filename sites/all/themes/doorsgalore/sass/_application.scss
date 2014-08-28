@@ -42,6 +42,7 @@
 	}
 	h3{ margin-bottom:10px; font-size:$s18}
 	[class*="icon-"]{ font-size:5em; @include text-shadow()}
+	a{ text-decoration:none}
 }	
 
 #footer{ background:$cream; padding:20px 0 30px; color:$lightbrown; line-height:1.1; font-family:$droid; 

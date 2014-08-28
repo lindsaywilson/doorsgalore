@@ -33,7 +33,7 @@
  $url = str_replace('taxonomy', '', drupal_get_path_alias($path['path']));
  
 ?>
-
+<div class="views-field-edit-node"><a href="/taxonomy/term/<?php print $fields['tid']->content ?>/edit">Edit</a></div>
 <div class="text">
     <h2><a href="<?php print $url; ?>"><?php print $name ?></a></h2>
     <div class="description"><?php print $description ?></div>
