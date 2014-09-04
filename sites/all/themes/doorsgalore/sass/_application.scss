@@ -105,6 +105,10 @@ h5{ font-size:$s13; margin-bottom:5px}
 h6{ @include font($openbold, $s11, $grey, 100%); margin:20px 0 15px; text-transform:uppercase }
 h1 a, h2 a, h3 a, h4 a, h5 a, h6 a{ text-decoration:none; }
 
+.field-name-body{
+	h3, h4, h5{ font-family:$openbold;}
+}
+
 p, ul, ol{ margin:0 0 20px 0}
 p:last-child, ul:last-child, ol:last-child{ margin-bottom:0}
 p#skip-link{ margin:0}
@@ -185,9 +189,12 @@ img{ vertical-align:middle; max-width:100%; height:auto !important}
 ----------------------------------*/
 #page-image{ margin-bottom:20px}
 .not-front .node-page{ margin-bottom:40px}
-#intro,
-.node-page .field-name-body,
-.node-webform .field-name-body{ font-family:$openbold; font-size:$s15; line-height:1.5}
+#intro{ font-family:$openbold; font-size:$s15; line-height:1.5}
+
+.tpl_left, .tpl_right { float: left; width: 50%; margin-bottom:30px }
+.tpl_left > .wrapper { padding-right: 10px; }
+.tpl_right > .wrapper { padding-left: 10px; }
+.tpl img { width: 100% !important; height: auto !important; }
 
 
 /* TESTIMONIAL

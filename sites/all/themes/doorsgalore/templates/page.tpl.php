@@ -73,6 +73,7 @@
 				
 				// Exterior Doors List
 				case 17:
+				case 21:
 					print doorsgalore_block_render('views', 'exterior_doors-block');
 					print doorsgalore_block_render('views', 'exterior_doors-order');
 					// Configurations

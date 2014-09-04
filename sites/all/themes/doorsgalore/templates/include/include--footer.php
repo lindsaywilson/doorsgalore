@@ -3,15 +3,15 @@
 	<div class="width clearfix">
     
     	<div class="grid grid-third">
-        	<span class="icon-door"></span>
+        	<a href="/gallery"><span class="icon-door"></span></a>
         	<?php print doorsgalore_block_render('block', 8); ?>
         </div>
         <div class="grid grid-third">
-        	<span class="icon-calculator"></span>
+        	<a href="/contact-us"><span class="icon-calculator"></span></a>
         	<?php print doorsgalore_block_render('block', 9); ?>
         </div>
         <div class="grid grid-third">
-        	<span class="icon-estimate"></span>
+        	<a href="/contact-us"><span class="icon-estimate"></span></a>
         	<?php print doorsgalore_block_render('block', 10); ?>
         </div>
     
@@ -28,7 +28,7 @@
 			<div class="info-block visit-showroom"><?php print doorsgalore_block_render('block', 2); ?></div>
             <span class="images">
             	<img src="/<?php print path_to_theme() ?>/images/logo_bbb.png" />
-                <img src="/<?php print path_to_theme() ?>/images/logo_homestars.png" />
+                <a href="http://homestars.com/companies/2704057-doors-galore?service_area=1717261" target="_blank"><img src="/<?php print path_to_theme() ?>/images/logo_homestars.png" /></a>
             </span>
         </div>
         

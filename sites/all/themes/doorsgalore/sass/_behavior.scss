@@ -134,6 +134,11 @@
 
 
 @media (max-width: 480px) {
+	
+	.tpl_left, 
+	.tpl_right{ float:none; width:auto}
+	.tpl_left > .wrapper,
+	.tpl_right > .wrapper{ padding:0}
 
 	#block-block-3 .grid{ width:50%; padding:0 5px}
 	#block-block-4 img{ margin-bottom:8px}
