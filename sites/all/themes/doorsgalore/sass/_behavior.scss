@@ -1,5 +1,10 @@
 
 
+@media (min-width: 801px) and (max-width: 900px) {
+	#nav ul li a{ padding:0 5px}
+}
+
+
 /* ------------------------------ */
 /* TABLET
 /* ------------------------------ */
@@ -23,7 +28,7 @@
 		a.close_nav:before{ content:'\f00d'; padding-right:3px}
 		a:hover:before{ color:$darkgrey}
 	}
-	#nav{ display:none; border-top:1px solid $cream;
+	#nav{ display:none; border-top:1px solid $cream; margin-top:0;
 		#header-nav{ position:static; width:auto; background:$darkgrey }
 		ul,
 		#header-nav ul{

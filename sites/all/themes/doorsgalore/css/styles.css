@@ -535,7 +535,7 @@ body.admin-menu {
   position: absolute;
   right: 0;
   top: 20px;
-  width: 480px;
+  width: 535px;
 }
 
 /* line 31, ../sass/_application.scss */
@@ -692,6 +692,7 @@ body.admin-menu {
 #nav {
   background: #544c45;
   display: block;
+  margin-top: 10px;
 }
 /* line 77, ../sass/_application.scss */
 #nav ul {
@@ -2415,28 +2416,34 @@ a.tabledrag-handle .handle {
   height: 25px;
 }
 
+@media (min-width: 801px) and (max-width: 900px) {
+  /* line 4, ../sass/_behavior.scss */
+  #nav ul li a {
+    padding: 0 5px;
+  }
+}
 /* ------------------------------ */
 /* TABLET
 /* ------------------------------ */
 @media (max-width: 800px) {
   /* MAIN LAYOUT 
   /* ------------------------------ */
-  /* line 12, ../sass/_behavior.scss */
+  /* line 17, ../sass/_behavior.scss */
   .width {
     padding: 0 20px;
   }
 
-  /* line 13, ../sass/_behavior.scss */
+  /* line 18, ../sass/_behavior.scss */
   .not-front #page {
     padding-bottom: 0;
   }
 
-  /* line 14, ../sass/_behavior.scss */
+  /* line 19, ../sass/_behavior.scss */
   .not-front #main {
     border-top: 2px solid #544c45;
   }
 
-  /* line 15, ../sass/_behavior.scss */
+  /* line 20, ../sass/_behavior.scss */
   .not-front #content {
     width: 75%;
     margin-left: 25%;
@@ -2444,13 +2451,13 @@ a.tabledrag-handle .handle {
     margin-bottom: 30px;
   }
 
-  /* line 16, ../sass/_behavior.scss */
+  /* line 21, ../sass/_behavior.scss */
   .not-front #sidebar-left {
     width: 25%;
     margin-right: -25%;
   }
 
-  /* line 17, ../sass/_behavior.scss */
+  /* line 22, ../sass/_behavior.scss */
   .not-front #sidebar-right {
     float: none;
     width: auto;
@@ -2458,16 +2465,16 @@ a.tabledrag-handle .handle {
     clear: both;
   }
 
-  /* line 18, ../sass/_behavior.scss */
+  /* line 23, ../sass/_behavior.scss */
   #header-blocks {
     display: none;
   }
 
-  /* line 20, ../sass/_behavior.scss */
+  /* line 25, ../sass/_behavior.scss */
   #mobile-nav-btn {
     display: block;
   }
-  /* line 21, ../sass/_behavior.scss */
+  /* line 26, ../sass/_behavior.scss */
   #mobile-nav-btn a {
     display: block;
     text-decoration: none;
@@ -2497,32 +2504,33 @@ a.tabledrag-handle .handle {
     line-height: 40px;
     left: 0;
   }
-  /* line 22, ../sass/_behavior.scss */
+  /* line 27, ../sass/_behavior.scss */
   #mobile-nav-btn a:before {
     position: static;
   }
-  /* line 23, ../sass/_behavior.scss */
+  /* line 28, ../sass/_behavior.scss */
   #mobile-nav-btn a.close_nav:before {
     content: '\f00d';
     padding-right: 3px;
   }
-  /* line 24, ../sass/_behavior.scss */
+  /* line 29, ../sass/_behavior.scss */
   #mobile-nav-btn a:hover:before {
     color: #3d332b;
   }
 
-  /* line 26, ../sass/_behavior.scss */
+  /* line 31, ../sass/_behavior.scss */
   #nav {
     display: none;
     border-top: 1px solid #dddbcc;
+    margin-top: 0;
   }
-  /* line 27, ../sass/_behavior.scss */
+  /* line 32, ../sass/_behavior.scss */
   #nav #header-nav {
     position: static;
     width: auto;
     background: #3d332b;
   }
-  /* line 30, ../sass/_behavior.scss */
+  /* line 35, ../sass/_behavior.scss */
   #nav ul li,
   #nav #header-nav ul li {
     display: block;
@@ -2530,7 +2538,7 @@ a.tabledrag-handle .handle {
     border: none;
     border-bottom: 1px solid #dddbcc;
   }
-  /* line 31, ../sass/_behavior.scss */
+  /* line 36, ../sass/_behavior.scss */
   #nav ul li a,
   #nav #header-nav ul li a {
     border: none;
@@ -2542,143 +2550,143 @@ a.tabledrag-handle .handle {
     font-style: normal;
     padding: 0;
   }
-  /* line 32, ../sass/_behavior.scss */
+  /* line 37, ../sass/_behavior.scss */
   #nav ul li a:hover,
   #nav #header-nav ul li a:hover {
     color: #fff;
     text-decoration: none;
     background: #3d332b;
   }
-  /* line 36, ../sass/_behavior.scss */
+  /* line 41, ../sass/_behavior.scss */
   #nav #header-nav ul li:first-child {
     display: none;
   }
-  /* line 37, ../sass/_behavior.scss */
+  /* line 42, ../sass/_behavior.scss */
   #nav #header-nav ul li a:hover {
     background: #282019;
   }
 
-  /* line 42, ../sass/_behavior.scss */
+  /* line 47, ../sass/_behavior.scss */
   #page-image {
     display: none;
   }
 
-  /* line 43, ../sass/_behavior.scss */
+  /* line 48, ../sass/_behavior.scss */
   #testimonial .inner {
     margin: 0 auto;
     max-width: 500px;
   }
 
-  /* line 44, ../sass/_behavior.scss */
+  /* line 49, ../sass/_behavior.scss */
   #reviews {
     border-top: none;
     margin-top: 0;
   }
 
-  /* line 46, ../sass/_behavior.scss */
+  /* line 51, ../sass/_behavior.scss */
   #buckets {
     padding: 20px 0;
   }
-  /* line 47, ../sass/_behavior.scss */
+  /* line 52, ../sass/_behavior.scss */
   #buckets .grid p {
     padding: 0 20px;
   }
 
-  /* line 49, ../sass/_behavior.scss */
+  /* line 54, ../sass/_behavior.scss */
   .not-front #buckets {
     border-top: 1px solid #bbb7b5;
   }
 
-  /* line 53, ../sass/_behavior.scss */
+  /* line 58, ../sass/_behavior.scss */
   #footer .nav,
   #footer #footer-right {
     float: none;
     width: auto;
   }
-  /* line 54, ../sass/_behavior.scss */
+  /* line 59, ../sass/_behavior.scss */
   #footer #footer-right {
     margin-top: 20px;
     position: relative;
   }
-  /* line 55, ../sass/_behavior.scss */
+  /* line 60, ../sass/_behavior.scss */
   #footer #copyright {
     position: static;
     margin-top: 20px;
   }
 
   /* FRONT */
-  /* line 61, ../sass/_behavior.scss */
+  /* line 66, ../sass/_behavior.scss */
   .front #block-views-homepage-banner-block {
     float: none;
     width: auto;
   }
-  /* line 62, ../sass/_behavior.scss */
+  /* line 67, ../sass/_behavior.scss */
   .front #homepage-right {
     float: none;
     width: auto;
     margin-top: 20px;
     min-height: inherit;
   }
-  /* line 63, ../sass/_behavior.scss */
+  /* line 68, ../sass/_behavior.scss */
   .front #homepage-right .block {
     float: left;
     width: 50%;
   }
-  /* line 64, ../sass/_behavior.scss */
+  /* line 69, ../sass/_behavior.scss */
   .front #homepage-right .block .cell {
     float: left;
     width: 50%;
   }
-  /* line 65, ../sass/_behavior.scss */
+  /* line 70, ../sass/_behavior.scss */
   .front #find-a-door p {
     margin-top: 0;
   }
-  /* line 66, ../sass/_behavior.scss */
+  /* line 71, ../sass/_behavior.scss */
   .front #testimonial #reviews {
     margin: 0;
   }
-  /* line 68, ../sass/_behavior.scss */
+  /* line 73, ../sass/_behavior.scss */
   .front .view-homepage-promos .views-row {
     float: none;
     width: auto;
     border: 1px solid #f2f2f2;
   }
-  /* line 69, ../sass/_behavior.scss */
+  /* line 74, ../sass/_behavior.scss */
   .front .view-homepage-promos .views-row:not(.views-row-first) {
     margin-top: 20px;
   }
-  /* line 70, ../sass/_behavior.scss */
+  /* line 75, ../sass/_behavior.scss */
   .front .view-homepage-promos .views-row-1, .front .view-homepage-promos .views-row-2, .front .view-homepage-promos .views-row-3 {
     padding: 0;
   }
-  /* line 71, ../sass/_behavior.scss */
+  /* line 76, ../sass/_behavior.scss */
   .front .view-homepage-promos .field-name-field-image {
     width: auto;
   }
 
   /* CONTACT */
-  /* line 76, ../sass/_behavior.scss */
+  /* line 81, ../sass/_behavior.scss */
   #sidebar-left #testimonial {
     display: none;
   }
 
-  /* line 77, ../sass/_behavior.scss */
+  /* line 82, ../sass/_behavior.scss */
   #block-block-12 {
     padding: 0 20px 40px;
   }
 
-  /* line 79, ../sass/_behavior.scss */
+  /* line 84, ../sass/_behavior.scss */
   .node-webform form #webform-component-header {
     float: none;
     width: auto;
     padding: 0;
   }
-  /* line 80, ../sass/_behavior.scss */
+  /* line 85, ../sass/_behavior.scss */
   .node-webform form #webform-component-header p {
     float: left;
     margin-right: 40px;
   }
-  /* line 84, ../sass/_behavior.scss */
+  /* line 89, ../sass/_behavior.scss */
   .node-webform form .form-item.webform-component-textfield,
   .node-webform form .form-item.webform-component-textarea,
   .node-webform form .form-item.webform-component-email {
@@ -2690,22 +2698,22 @@ a.tabledrag-handle .handle {
 /* MOBILE
 /* ------------------------------ */
 @media (max-width: 600px) {
-  /* line 98, ../sass/_behavior.scss */
+  /* line 103, ../sass/_behavior.scss */
   .width {
     padding: 0;
   }
 
-  /* line 99, ../sass/_behavior.scss */
+  /* line 104, ../sass/_behavior.scss */
   #sidebar-left {
     display: none;
   }
 
-  /* line 100, ../sass/_behavior.scss */
+  /* line 105, ../sass/_behavior.scss */
   .not-front #sidebar-right {
     margin: 0;
   }
 
-  /* line 101, ../sass/_behavior.scss */
+  /* line 106, ../sass/_behavior.scss */
   .not-front #content {
     float: none;
     margin-left: 0;
@@ -2714,7 +2722,7 @@ a.tabledrag-handle .handle {
     width: auto;
   }
 
-  /* line 105, ../sass/_behavior.scss */
+  /* line 110, ../sass/_behavior.scss */
   .not-front #content,
   #testimonial,
   #footer {
@@ -2722,100 +2730,113 @@ a.tabledrag-handle .handle {
     padding-right: 20px;
   }
 
-  /* line 106, ../sass/_behavior.scss */
+  /* line 111, ../sass/_behavior.scss */
   #logo {
     padding-left: 14px;
   }
 
-  /* line 107, ../sass/_behavior.scss */
+  /* line 112, ../sass/_behavior.scss */
   #mobile-nav-btn a {
     right: 14px;
     margin-right: 0;
   }
 
-  /* line 109, ../sass/_behavior.scss */
+  /* line 114, ../sass/_behavior.scss */
   #buckets {
     display: none;
   }
 
-  /* line 111, ../sass/_behavior.scss */
+  /* line 116, ../sass/_behavior.scss */
   #footer .nav {
     display: none;
   }
-  /* line 112, ../sass/_behavior.scss */
+  /* line 117, ../sass/_behavior.scss */
   #footer #footer-right {
     margin-top: 0;
   }
-  /* line 113, ../sass/_behavior.scss */
+  /* line 118, ../sass/_behavior.scss */
   #footer #footer-right .images {
     right: 0;
   }
-  /* line 114, ../sass/_behavior.scss */
+  /* line 119, ../sass/_behavior.scss */
   #footer #footer-right .images img:last-of-type {
     display: none;
   }
 
-  /* line 118, ../sass/_behavior.scss */
+  /* line 123, ../sass/_behavior.scss */
   #testimonial .inner {
     max-width: none;
   }
 
-  /* line 119, ../sass/_behavior.scss */
+  /* line 124, ../sass/_behavior.scss */
   #reviews {
     margin: 0;
   }
 
   /* FRONT */
-  /* line 124, ../sass/_behavior.scss */
+  /* line 129, ../sass/_behavior.scss */
   .front #main {
     padding-bottom: 20px;
   }
-  /* line 125, ../sass/_behavior.scss */
+  /* line 130, ../sass/_behavior.scss */
   .front .node-homepage-banner {
     padding: 20px;
   }
-  /* line 126, ../sass/_behavior.scss */
+  /* line 131, ../sass/_behavior.scss */
   .front #homepage-right .block {
     float: none;
     width: 100%;
   }
-  /* line 127, ../sass/_behavior.scss */
+  /* line 132, ../sass/_behavior.scss */
   .front #need-help {
     display: none;
   }
-  /* line 128, ../sass/_behavior.scss */
+  /* line 133, ../sass/_behavior.scss */
   .front .price-label:after {
     display: none;
   }
-  /* line 129, ../sass/_behavior.scss */
+  /* line 134, ../sass/_behavior.scss */
   .front .price-label {
     right: 0;
   }
 }
 @media (max-width: 480px) {
-  /* line 138, ../sass/_behavior.scss */
+  /* line 144, ../sass/_behavior.scss */
+  .tpl_left,
+  .tpl_right {
+    float: none;
+    width: auto;
+  }
+
+  /* line 146, ../sass/_behavior.scss */
+  .tpl_left > .wrapper,
+  .tpl_right > .wrapper {
+    padding: 0;
+  }
+
+  /* line 148, ../sass/_behavior.scss */
   #block-block-3 .grid {
     width: 50%;
     padding: 0 5px;
   }
 
-  /* line 139, ../sass/_behavior.scss */
+  /* line 149, ../sass/_behavior.scss */
   #block-block-4 img {
     margin-bottom: 8px;
   }
 
-  /* line 140, ../sass/_behavior.scss */
+  /* line 150, ../sass/_behavior.scss */
   #block-block-7 img {
     margin-bottom: 30px;
   }
 
-  /* line 142, ../sass/_behavior.scss */
+  /* line 152, ../sass/_behavior.scss */
   .views-door-hardware .description {
     margin-right: 0;
     padding-top: 20px;
   }
 
-  /* line 146, ../sass/_behavior.scss */
+  /* line 156, ../sass/_behavior.scss */
   #deadbolts .price-label,
   #ball-knobs .price-label,
   #level-handles .price-label,
@@ -2825,22 +2846,22 @@ a.tabledrag-handle .handle {
   }
 
   /* FRONT */
-  /* line 150, ../sass/_behavior.scss */
+  /* line 160, ../sass/_behavior.scss */
   .front .price-label {
     margin: 0;
     top: auto;
     bottom: 20px;
   }
-  /* line 152, ../sass/_behavior.scss */
+  /* line 162, ../sass/_behavior.scss */
   .front .node-homepage-banner .field-name-field-link {
     position: static;
     margin-top: 20px;
   }
-  /* line 155, ../sass/_behavior.scss */
+  /* line 165, ../sass/_behavior.scss */
   .front .view-homepage-promos .field-name-field-image {
     width: 40%;
   }
-  /* line 158, ../sass/_behavior.scss */
+  /* line 168, ../sass/_behavior.scss */
   .front #block-block-11,
   .front #testimonial {
     float: none;
@@ -2849,43 +2870,43 @@ a.tabledrag-handle .handle {
   }
 
   /* CONTACT */
-  /* line 163, ../sass/_behavior.scss */
+  /* line 173, ../sass/_behavior.scss */
   .node-webform form #webform-component-header {
     float: none;
     width: auto;
     padding: 0;
   }
-  /* line 164, ../sass/_behavior.scss */
+  /* line 174, ../sass/_behavior.scss */
   .node-webform form #webform-component-header p:first-of-type {
     float: none;
   }
-  /* line 165, ../sass/_behavior.scss */
+  /* line 175, ../sass/_behavior.scss */
   .node-webform form #webform-component-header p {
     margin-right: 20px;
   }
 }
 @media (max-width: 320px) {
-  /* line 176, ../sass/_behavior.scss */
+  /* line 186, ../sass/_behavior.scss */
   .grid-half,
   .grid-third,
   .grid-quarter {
     width: 50%;
   }
 
-  /* line 179, ../sass/_behavior.scss */
+  /* line 189, ../sass/_behavior.scss */
   .layout .grid {
     margin-bottom: 20px;
   }
-  /* line 180, ../sass/_behavior.scss */
+  /* line 190, ../sass/_behavior.scss */
   .layout .grid-third:nth-child(odd) {
     padding: 0 10px 0 0;
   }
-  /* line 181, ../sass/_behavior.scss */
+  /* line 191, ../sass/_behavior.scss */
   .layout .grid-third:nth-child(even) {
     padding: 0 0 0 10px;
   }
 
-  /* line 184, ../sass/_behavior.scss */
+  /* line 194, ../sass/_behavior.scss */
   .gallery-images .grid {
     display: block;
     text-align: center;

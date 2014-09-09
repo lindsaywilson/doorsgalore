@@ -26,7 +26,7 @@
 		h5 span{ display:none}
 		p{ margin-bottom:5px; font-size:$s11}
 	}
-	#header-nav{ position:absolute; right:0; top:20px; width:480px}
+	#header-nav{ position:absolute; right:0; top:20px; width:535px}
 }
 .info-block strong{ font-family:$droidbold;}
 
@@ -73,7 +73,7 @@
 /* ---------------------------------------------------------------- */
 
 #mobile-nav-btn{ display:none;}
-#nav{ background:$grey; display:block;
+#nav{ background:$grey; display:block; margin-top:10px;
 	ul{ @include reset; text-align:center;
 		li{ @include reset; display:inline-block; padding:8px 0;
 			&:last-child a{ border-right:none;}
