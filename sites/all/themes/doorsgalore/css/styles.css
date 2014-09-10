@@ -919,11 +919,12 @@ a.btn {
   background-image: -o-linear-gradient(top, white, #e6e7e8);
   /* Opera 11.10-12.00 */
   background-image: linear-gradient(to bottom, #ffffff, #e6e7e8);
-  padding: 2px 10px 2px 20px;
+  padding: 4px 10px 4px 20px;
   position: relative;
   -webkit-box-shadow: 0 -1px 0 0 #fefefe inset;
   -moz-box-shadow: 0 -1px 0 0 #fefefe inset;
   box-shadow: 0 -1px 0 0 #fefefe inset;
+  display: inline-block;
 }
 /* line 129, ../sass/_application.scss */
 a.btn:before {
@@ -2791,52 +2792,52 @@ a.tabledrag-handle .handle {
   .front #need-help {
     display: none;
   }
-  /* line 133, ../sass/_behavior.scss */
-  .front .price-label:after {
+  /* line 134, ../sass/_behavior.scss */
+  .front .view-homepage-promos .price-label:after {
     display: none;
   }
-  /* line 134, ../sass/_behavior.scss */
-  .front .price-label {
+  /* line 135, ../sass/_behavior.scss */
+  .front .view-homepage-promos .price-label {
     right: 0;
   }
 }
 @media (max-width: 480px) {
-  /* line 144, ../sass/_behavior.scss */
+  /* line 146, ../sass/_behavior.scss */
   .tpl_left,
   .tpl_right {
     float: none;
     width: auto;
   }
 
-  /* line 146, ../sass/_behavior.scss */
+  /* line 148, ../sass/_behavior.scss */
   .tpl_left > .wrapper,
   .tpl_right > .wrapper {
     padding: 0;
   }
 
-  /* line 148, ../sass/_behavior.scss */
+  /* line 150, ../sass/_behavior.scss */
   #block-block-3 .grid {
     width: 50%;
     padding: 0 5px;
   }
 
-  /* line 149, ../sass/_behavior.scss */
+  /* line 151, ../sass/_behavior.scss */
   #block-block-4 img {
     margin-bottom: 8px;
   }
 
-  /* line 150, ../sass/_behavior.scss */
+  /* line 152, ../sass/_behavior.scss */
   #block-block-7 img {
     margin-bottom: 30px;
   }
 
-  /* line 152, ../sass/_behavior.scss */
+  /* line 154, ../sass/_behavior.scss */
   .views-door-hardware .description {
     margin-right: 0;
     padding-top: 20px;
   }
 
-  /* line 156, ../sass/_behavior.scss */
+  /* line 158, ../sass/_behavior.scss */
   #deadbolts .price-label,
   #ball-knobs .price-label,
   #level-handles .price-label,
@@ -2846,22 +2847,22 @@ a.tabledrag-handle .handle {
   }
 
   /* FRONT */
-  /* line 160, ../sass/_behavior.scss */
+  /* line 162, ../sass/_behavior.scss */
   .front .price-label {
     margin: 0;
     top: auto;
     bottom: 20px;
   }
-  /* line 162, ../sass/_behavior.scss */
+  /* line 164, ../sass/_behavior.scss */
   .front .node-homepage-banner .field-name-field-link {
     position: static;
     margin-top: 20px;
   }
-  /* line 165, ../sass/_behavior.scss */
+  /* line 167, ../sass/_behavior.scss */
   .front .view-homepage-promos .field-name-field-image {
     width: 40%;
   }
-  /* line 168, ../sass/_behavior.scss */
+  /* line 170, ../sass/_behavior.scss */
   .front #block-block-11,
   .front #testimonial {
     float: none;
@@ -2870,43 +2871,43 @@ a.tabledrag-handle .handle {
   }
 
   /* CONTACT */
-  /* line 173, ../sass/_behavior.scss */
+  /* line 175, ../sass/_behavior.scss */
   .node-webform form #webform-component-header {
     float: none;
     width: auto;
     padding: 0;
   }
-  /* line 174, ../sass/_behavior.scss */
+  /* line 176, ../sass/_behavior.scss */
   .node-webform form #webform-component-header p:first-of-type {
     float: none;
   }
-  /* line 175, ../sass/_behavior.scss */
+  /* line 177, ../sass/_behavior.scss */
   .node-webform form #webform-component-header p {
     margin-right: 20px;
   }
 }
 @media (max-width: 320px) {
-  /* line 186, ../sass/_behavior.scss */
+  /* line 188, ../sass/_behavior.scss */
   .grid-half,
   .grid-third,
   .grid-quarter {
     width: 50%;
   }
 
-  /* line 189, ../sass/_behavior.scss */
+  /* line 191, ../sass/_behavior.scss */
   .layout .grid {
     margin-bottom: 20px;
   }
-  /* line 190, ../sass/_behavior.scss */
+  /* line 192, ../sass/_behavior.scss */
   .layout .grid-third:nth-child(odd) {
     padding: 0 10px 0 0;
   }
-  /* line 191, ../sass/_behavior.scss */
+  /* line 193, ../sass/_behavior.scss */
   .layout .grid-third:nth-child(even) {
     padding: 0 0 0 10px;
   }
 
-  /* line 194, ../sass/_behavior.scss */
+  /* line 196, ../sass/_behavior.scss */
   .gallery-images .grid {
     display: block;
     text-align: center;

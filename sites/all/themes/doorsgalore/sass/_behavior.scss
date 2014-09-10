@@ -130,8 +130,10 @@
 		.node-homepage-banner{ padding:20px}
 		#homepage-right .block{ float:none; width:100%}
 		#need-help{ display:none}
-		.price-label:after{ display:none}
-		.price-label{ right:0}
+		.view-homepage-promos{
+			.price-label:after{ display:none}
+			.price-label{ right:0}
+		}
 	}
 
 

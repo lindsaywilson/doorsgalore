@@ -125,7 +125,7 @@ a:active{ outline:none}
 a:link{ outline:none}
 a:hover{ text-decoration:none; color:#000}
 
-a.btn{ @include font($crete, $s13, $green, 100%); border:1px solid #989898; @include cornerborder(4px); text-decoration:none; @include gradient(#fff, #e6e7e8); padding:2px 10px 2px 20px; position:relative; @include shadow(0,-1px,0,0,#fefefe, inset);
+a.btn{ @include font($crete, $s13, $green, 100%); border:1px solid #989898; @include cornerborder(4px); text-decoration:none; @include gradient(#fff, #e6e7e8); padding:4px 10px 4px 20px; position:relative; @include shadow(0,-1px,0,0,#fefefe, inset); display:inline-block;
 	&:before{ @include arrow($green, 10px); top:3px}
 	&:hover{ @include gradient(#fdfdfd,#d3d3d3)}
 }
