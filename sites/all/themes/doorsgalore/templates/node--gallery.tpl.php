@@ -15,13 +15,14 @@
   
   <div class="gallery-images layout">
   <?php	
+  if(isset($node->field_images['und'])){
 	foreach($node->field_images['und'] as $img){
 		$thumb = image_style_url('gallery-thumb', $img['uri']);
 		$full = image_style_url('large', $img['uri']);
 		$title = $img['title'];
 		print '<a class="grid grid-third magnific" href="'.$full.'" title="'.$title.'"><img src="'.$thumb.'" /></a>';
 	}
-	
+  }
   ?>
   </div>
 

@@ -14,8 +14,8 @@
   	include 'include/include--node-edit.php';
     print render($content['field_image']);
 	print '<h6>'.$title.'</h6>';
-	print '<p class="details">'.$node->body['und'][0]['value'].'</p>';
-	print '<strong class="price">$'.$node->field_price['und'][0]['value'].'</strong>';
+	print (isset($node->body['und']) ? '<p class="details">'.$node->body['und'][0]['value'].'</p>' : '');
+	print (isset($node->field_price['und']) ? '<strong class="price">$'.$node->field_price['und'][0]['value'].'</strong>' : '');
   ?>
 
 
